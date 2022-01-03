@@ -17,4 +17,7 @@
  * along with your plugin. If not, see <http://www.gnu.org/licenses/>.
 */
 
+// Define the plugin name
+define( 'OLIEMONSTER-PORTAL-PLUGIN-NAME', __FILE__ );
+
 ?>

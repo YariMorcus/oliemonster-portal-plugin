@@ -18,6 +18,34 @@
 */
 
 // Define the plugin name
-define( 'OLIEMONSTER-PORTAL-PLUGIN-NAME', __FILE__ );
+define( 'OLIEMONSTER_PORTAL_PLUGIN', __FILE__ );
+
+// Include the general definition file
+require_once plugin_dir_path( __FILE__ ) . 'includes/defs.php';
+
+/**
+ * Class instantiates the entire plugin functionality
+ * @author Yari Morcus
+ * @version 0.1
+ * 
+ * 
+*/
+class OliemonsterPortal {
+
+    /**
+     * __construct
+     * 
+     * Run function as soon as plugin is being activated throughout WP admin
+    */
+    public function __construct() {
+
+
+
+    }
+
+}
+
+// Instantiate the class
+$oliemonster_portal = new OliemonsterPortal();
 
 ?>

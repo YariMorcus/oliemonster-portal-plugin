@@ -71,6 +71,9 @@ class OliemonsterPortal {
             // Load Bootstrap CSS/script files
             add_action( 'admin_enqueue_scripts', array( 'OliemonsterPortal', 'loadBootstrapFiles') );
 
+            // Load Custom CSS
+            $this->loadCustomCSS();
+
         }
 
     }
@@ -108,6 +111,17 @@ class OliemonsterPortal {
         wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css', false, null );
         
         wp_enqueue_script( 'bootstrap-bundle', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js', false, array(), false, true );
+
+    }
+
+    /**
+     * loadCustomCSS
+     *
+     *  Load the custom CSS that has been used for this plugin
+    */
+    public function loadCustomCSS() {
+
+        wp_enqueue_style( 'oliemonster-portal', plugin_dir_url(__FILE__) . 'admin/assets/css/style.css', array(), false, 'all' );
 
     }
 

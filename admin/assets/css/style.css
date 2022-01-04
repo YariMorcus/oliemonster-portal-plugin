@@ -1,3 +1,26 @@
+.h1,
+.h2 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  color: #293133;
+}
 
+.h1 {
+  font-size: 32px !important;
+}
+
+.h2 {
+  font-size: 24px !important;
+}
+
+.portal-button {
+  width: 100%;
+  height: 125px;
+  background-color: #F0B823 !important;
+}
+@media only screen and (min-width: 992px) {
+  .portal-button {
+    width: 300px !important;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

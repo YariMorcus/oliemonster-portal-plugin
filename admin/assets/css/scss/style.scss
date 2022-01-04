@@ -4,6 +4,7 @@ $caterpillar-yellow: #F0B823;
 $outer-space: #293133;
 $error-color: #DC143C;
 $dove-gray: #707070;
+$read-only: #EEEEEE;
 
 // Decide which media query to use based on its given arguments
 // $type = broad category of devices (such as screen)
@@ -36,6 +37,11 @@ tr {
     border-color: $dove-gray !important;
 }
 
+.wp-die-message, 
+p {
+    font-size: 16px !important;
+}
+
 .h1 {
     font-size: 32px !important;
 }
@@ -51,6 +57,42 @@ tr {
 .btn-check:focus+.btn, .btn:focus {
     outline: 0;
     box-shadow: 0 0 0 0.1rem #000 !important;
+}
+.col-form-label {
+    color: $outer-space !important;
+}
+
+.text-muted {
+    font-size: 13px !important;
+}
+
+input.readonly, 
+input[readonly],
+textarea.readonly, 
+textarea[readonly] {
+    background-color: $read-only;
+}
+
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+    border: 1px solid $outer-space;
+}
+
+.form-submit-button {
+    height: 45px;
+    border-radius: 4px;
+    background-color: $caterpillar-yellow !important;
 }
 
 .portal-button {

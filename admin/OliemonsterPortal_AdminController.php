@@ -71,7 +71,6 @@ class OliemonsterPortal_AdminController {
         // );
 
         
-
     }
 
     /**

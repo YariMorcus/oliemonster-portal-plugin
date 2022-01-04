@@ -1,3 +1,16 @@
+<?php 
+
+// Get base url to current file
+$base_url = get_admin_url() . 'admin.php';
+
+// Setup parameters
+$params = array( 'page' => 'oliemonster-portal-aanvragen-controle' );
+
+// Setup anchor link
+$aanvragen_controle_link = add_query_arg( $params, $base_url );
+
+?>
+
 <div class="wrap">
     <div class="container">
         <div class="row">
@@ -14,7 +27,7 @@
                 </p> <!-- .mb-4 -->
                 <section class="mb-4">
                     <h2 class="h2 mb-4">Snelle navigatie</h2>
-                    <a href="#" class="btn portal-button">Aanvragen controle</a>
+                    <a href="<?php echo $aanvragen_controle_link; ?>" class="btn portal-button">Aanvragen controle</a>
                 </section> <!-- .mb-4 -->
                 <section>
                     <h2 class="h2 mb-4">Overzicht ingediende aanvragen</h2>

@@ -39,9 +39,62 @@ class OliemonsterPortal {
     */
     public function __construct() {
 
+        // Fire a hook before the class is setup
+        do_action( 'oliemonster_portal_pre_init' );
 
+        // Load the plugin
+        add_action( 'init', array( $this, 'init' ), 1 );
 
     }
+
+    /**
+     * init
+     * 
+     * Load the plugin into WordPress
+     * 
+     * @since 0.1
+    */
+    public function init() {
+
+        // Run hook once plugin has been initialized
+        do_action( 'oliemonster_portal_init' );
+
+        // Load admin only components
+        if ( is_admin() ) {
+            
+            // Load all admin specific includes
+            $this->requireAdmin();
+
+            // Setup admin page
+            $this->createAdmin();
+
+        }
+
+    }
+
+    /**
+     * requireAdmin
+     * 
+     * Loads all admin related files into scope
+    */
+    public function requireAdmin() {
+
+        // Admin controller file
+        require_once OLIEMONSTER_PORTAL_PLUGIN_ADMIN_DIR . '/OliemonsterPortal_AdminController.php';
+
+    }
+
+    /**
+     * createAdmin
+     * 
+     * Setup admin page
+    */
+    public function createAdmin() {
+
+        OliemonsterPortal_AdminController::prepare();
+
+    }
+
 
 }
 

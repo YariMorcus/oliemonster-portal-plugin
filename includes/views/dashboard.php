@@ -1,16 +1,8 @@
 <div class="wrap">
-    <?php 
-    
-    if ( current_user_can('administrator') ) {
-        ?>
-        <h1>Admin dashboard</h1>
-        <?php
-    } else {
-        ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-2 col-lg-3">
-                    <img src="<?php echo plugin_dir_url( __DIR__ ); ?>/assets/img/logo-oliemonster.jpg" alt="" class="img-fluid d-block mx-auto" width="140" height="79">
+                    <img src="<?php echo plugin_dir_url( dirname( __DIR__ ) ); ?>/admin/assets/img/logo-oliemonster.jpg" alt="" class="img-fluid d-block mx-auto" width="140" height="79">
                 </div>
                 <div class="col-md-10 col-lg-7">
                     <h1 class="h1 mb-4">Dashboard</h1>
@@ -52,8 +44,6 @@
             </div>
         </div>
         <?php      
-    }
-
     ?>
 </div>
 <?php 

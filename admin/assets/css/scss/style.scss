@@ -3,6 +3,7 @@ $mystic-color: #E7EDEF;
 $caterpillar-yellow: #F0B823;
 $outer-space: #293133;
 $error-color: #DC143C;
+$dove-gray: #707070;
 
 @mixin media($type, $feature) {
 
@@ -14,9 +15,17 @@ $error-color: #DC143C;
 }
 
 .h1,
-.h2 {
+.h2,
+p,
+button,
+th,
+td {
   font-family: Arial, Helvetica, sans-serif !important;
   color: $outer-space;  
+}
+
+tr {
+    border-color: $dove-gray !important;
 }
 
 .h1 {
@@ -27,6 +36,15 @@ $error-color: #DC143C;
     font-size: 24px !important;
 }
 
+.table>:not(caption)>*>* {
+    padding: 1rem .5rem !important;
+}
+
+.btn-check:focus+.btn, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem #000 !important;
+}
+
 .portal-button {
     width: 100%;
     height: 125px;
@@ -35,5 +53,4 @@ $error-color: #DC143C;
     @include media('screen', 'lg') {
         width: 300px !important;
     }
-
 }

@@ -74,7 +74,16 @@ class OliemonsterPortal {
             // Load Custom CSS
             $this->loadCustomCSS();
 
+            // Add admin specific capability for plugin
+            $this->addCustomAdminCapability();
+
+            // Add subscriber specific capability for plugin
+            $this->addCustomSubscriberCapability();
+
         }
+
+        
+    
 
     }
 
@@ -122,6 +131,36 @@ class OliemonsterPortal {
     public function loadCustomCSS() {
 
         wp_enqueue_style( 'oliemonster-portal', plugin_dir_url(__FILE__) . 'admin/assets/css/style.css', array(), false, 'all' );
+
+    }
+
+    /**
+     * addCustomAdminCapability
+     * 
+     * Add a custom administrator capability
+    */
+    public function addCustomAdminCapability() {
+
+        // Get the administrator role
+        $administrator_role = get_role( 'administrator' );
+
+        // Add new capability
+        $administrator_role->add_cap( 'oliepor_admin_view_dashboard' );
+
+    }
+
+    /**
+     * addCustomSubscriberCapability
+     * 
+     * Add a custom subscriber capability
+    */
+    public function addCustomSubscriberCapability() {
+
+        // Get the subscriber role
+        $subscriber_role = get_role( 'subscriber' );
+
+        // Add new capability
+        $subscriber_role->add_cap( 'oliepor_subscriber_view_dashboard' );
 
     }
 

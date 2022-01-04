@@ -69,6 +69,21 @@ class OliemonsterPortal_AdminController {
             'dashicons-dashboard'            
         );
 
+        add_submenu_page(
+            // $parent_slug, The slug name for the parent menu (or the file name of a standard WordPress admin page)
+            'oliemonster-portal-dashboard',
+            // $page_title, The text to be displayed in the title tags of the page when the menu is selected
+            __( 'Oliemonster portal aanvragen controle', 'oliemonster-portal' ),
+            // $menu_title, The text to be used for the menu.
+            __( 'Aanvragen controle', 'oliemonster-portal' ),
+            // $capability, The capability required for this menu to be displayed to the user
+            'oliepor_subscriber_view_dashboard',
+            // $menu_slug, The slug name to refer to this menu by. Should be unique for this menu page
+            'oliemonster-portal-aanvragen-controle',
+            // $function, The function to be called to output the content for this page
+            array( 'OliemonsterPortal_AdminController', 'subscriberRequestCheckPage' )            
+        );
+
         // Add menu page for subscribers only
         // add_menu_page(
         //     // $page_title, The text to be displayed in the title tags of the page when the menu is selected
@@ -100,14 +115,24 @@ class OliemonsterPortal_AdminController {
         include OLIEMONSTER_PORTAL_PLUGIN_ADMIN_VIEWS_DIR . '/admin_dashboard.php';
         
     }
+
     /**
-     * 
      * subscriberDashboardPage
     */
     static function subscriberDashboardPage() {
 
         // Include the view for this menu page
         include OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_VIEWS_DIR . '/dashboard.php';
+
+    }
+
+    /**
+     * subscriberRequestCheckPage
+    */
+    static function subscriberRequestCheckPage() {
+
+        // Include the view for this menu page
+        include OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_VIEWS_DIR . '/aanvragen_controle.php';
 
     }
 

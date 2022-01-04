@@ -14,7 +14,7 @@
                 </p> <!-- .mb-4 -->
                 <section class="mb-4">
                     <h2 class="h2 mb-4">Snelle navigatie</h2>
-                    <button class="btn portal-button">Aanvragen controle</button>
+                    <a href="#" class="btn portal-button">Aanvragen controle</a>
                 </section> <!-- .mb-4 -->
                 <section>
                     <h2 class="h2 mb-4">Overzicht ingediende aanvragen</h2>

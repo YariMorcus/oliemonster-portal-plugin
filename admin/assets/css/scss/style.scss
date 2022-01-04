@@ -5,6 +5,14 @@ $outer-space: #293133;
 $error-color: #DC143C;
 $dove-gray: #707070;
 
+// Decide which media query to use based on its given arguments
+// $type = broad category of devices (such as screen)
+// $feature = media feature such as min-width
+//
+// @content means that you can provide the css within the curly braces { } when calling this mixin with @include
+// (see class .portal-button for an example
+//
+// @author Yari Morcus
 @mixin media($type, $feature) {
 
     @if $feature == 'lg' {

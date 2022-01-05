@@ -23,6 +23,9 @@ define( 'OLIEMONSTER_PORTAL_PLUGIN', __FILE__ );
 // Include the general definition file
 require_once plugin_dir_path( __FILE__ ) . 'includes/defs.php';
 
+// Tell WordPress what to do when plugin has been activated
+register_activation_hook( __FILE__, array( 'OliemonsterPortal', 'on_activation' ) );
+
 /**
  * Class instantiates the entire plugin functionality
  * @author Yari Morcus
@@ -82,8 +85,22 @@ class OliemonsterPortal {
 
         }
 
-        
-    
+    }
+
+    /**
+     * on_activation
+     * 
+     * if { ! current_user_can( 'activate_plugins' ) }, if user cannot activate plugin's, abort function 
+     * (prevent user from activating plugin)
+    */
+    public static function on_activation() {
+
+        if ( ! current_user_can( 'activate_plugins' ) ) return;
+
+        require_once( OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/DatabaseSetup.php' );
+
+        // Insert the tables
+        DatabaseSetup::createDBTables();
 
     }
 

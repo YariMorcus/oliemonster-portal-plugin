@@ -22,7 +22,7 @@ class DatabaseSetupQueries {
 
             $table_name_1 = 'wp_oliepor_controle_aanvragen', 
             $table_name_2 = 'wp_oliepor_filters_ververst',
-            $table_name_3 = 'wp_oliepor_koelmiddel_gebruikt	',
+            $table_name_3 = 'wp_oliepor_koelmiddel_gebruikt',
             $table_name_4 = 'wp_oliepor_olie_ververst',
             $table_name_5 = 'wp_oliepor_status_aanvragen'
 

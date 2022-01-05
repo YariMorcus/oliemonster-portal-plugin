@@ -102,6 +102,9 @@ class OliemonsterPortal {
         // Insert the tables
         DatabaseSetup::createDBTables();
 
+        // Insert DB data
+        DatabaseSetup::insertDBData();
+
     }
 
     /**

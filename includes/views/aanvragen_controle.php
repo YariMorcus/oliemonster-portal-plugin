@@ -90,7 +90,7 @@
                             <select name="olie-ververst" id="olie-ververst" class="custom-select w-100">
                                 <option value="">Selecteer ja of nee</option>
                                 <option value="1">Ja</option>
-                                <option value="0">Nee</option>
+                                <option value="2">Nee</option>
                             </select>
                         </div> <!-- .col-sm-9 -->
                     </div> <!-- .form-group -->
@@ -100,7 +100,7 @@
                             <select name="filters-ververst" id="filters-ververst" class="custom-select w-100">
                                 <option value="">Selecteer ja of nee</option>
                                 <option value="1">Ja</option>
-                                <option value="0">Nee</option>
+                                <option value="2">Nee</option>
                             </select>
                         </div> <!-- .col-sm-9 -->
                     </div> <!-- .form-group -->
@@ -110,7 +110,7 @@
                             <select name="koelmiddel-gebruikt" id="koelmiddel-gebruikt" class="custom-select w-100">
                                 <option value="">Selecteer ja of nee</option>
                                 <option value="1">Ja</option>
-                                <option value="0">Nee</option>
+                                <option value="2">Nee</option>
                             </select>
                         </div> <!-- .col-sm-9 -->
                     </div> <!-- .form-group -->

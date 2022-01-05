@@ -86,7 +86,11 @@ input[type=text],
 input[type=time],
 input[type=url],
 input[type=week] {
-    border: 1px solid $outer-space;
+    border: 1px solid $outer-space !important;
+}
+
+.wp-core-ui select {
+    border-color: red !important;
 }
 
 .form-submit-button {

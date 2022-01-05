@@ -1,3 +1,28 @@
+<?php
+
+// Include the model
+require_once OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/AanvragenControle.php';
+
+// Declare class variable
+$aanvragen_controle = new AanvragenControle();
+
+// Set base url to current file and add page specific vars
+$base_url = get_admin_url() . 'admin.php';
+$params = array( 'page' => basename( __FILE__, '.php' ) );
+
+// Add params to base url
+$base_url = add_query_arg( $params, $base_url );
+
+// Get the POST data in filtered array
+$post_array = $aanvragen_controle->getPostValues();
+
+echo __FILE__ . __LINE__ . '<br><br>';
+echo '<pre>';
+var_dump($post_array);
+echo '</pre>';
+
+
+?>
 <div class="wrap">
     <div class="container">
         <div class="row">
@@ -10,7 +35,7 @@
                 <p class="mb-4">
                 Op deze pagina kunt u een controle aanvragen voor uw oliemonster.
                 </p> <!-- .mb-4 -->
-                <form action="">
+                <form action="<?php echo $base_url; ?>" method="POST">
                     <div class="form-group row mb-3">
                         <label for="monsternummer" class="col-sm-3 col-form-label">Monsternummer</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
@@ -57,7 +82,7 @@
                     <div class="form-group row mb-3">
                         <label for="monster-datum" class="col-sm-3 col-form-label">Monster datum</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
-                            <input name="monster-datum" type="text" class="form-control-plain-text w-100" id="monster-datum" placeholder="Vul hier de monster datum in">
+                            <input name="monster-datum" type="date" class="form-control-plain-text w-100" id="monster-datum" placeholder="Vul hier de monster datum in">
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
@@ -121,12 +146,12 @@
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
-                        <label for="opmerkingen" class="col-sm-3 col-form-label">Opmerkingen</label>
+                        <label for="opmerking" class="col-sm-3 col-form-label">Opmerkingen</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <textarea name="opmerking" class="form-control w-100" id="opmerkingen" rows="10" placeholder="U kunt hier eventuele opmerkingen kwijt"></textarea>
                         </div>
                     </div> <!-- .form-group -->
-                    <button type="submit" class="btn mb-3 w-100 form-submit-button">Indienen aanvraag controle</button>
+                    <button name="submit" type="submit" class="btn mb-3 w-100 form-submit-button">Indienen aanvraag controle</button>
                 </form>
             </div> <!-- .col-md-10 -->
         </div> <!-- .row -->

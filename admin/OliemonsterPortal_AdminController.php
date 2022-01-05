@@ -79,7 +79,7 @@ class OliemonsterPortal_AdminController {
             // $capability, The capability required for this menu to be displayed to the user
             'oliepor_subscriber_view_dashboard',
             // $menu_slug, The slug name to refer to this menu by. Should be unique for this menu page
-            'oliemonster-portal-aanvragen-controle',
+            'aanvragen_controle',
             // $function, The function to be called to output the content for this page
             array( 'OliemonsterPortal_AdminController', 'subscriberRequestCheckPage' )            
         );

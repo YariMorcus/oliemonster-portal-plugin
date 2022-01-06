@@ -41,6 +41,9 @@ class AanvragenControle {
             // Submit button
             'submit' => array( 'filter', FILTER_SANITIZE_STRING ),
             
+            // Gebruiker id field
+            'gebruiker-id' => array( 'filter', FILTER_SANITIZE_STRING ),
+
             // Monsternummer field
             'monsternummer' => array( 'filter', FILTER_VALIDATE_INT ),
             
@@ -105,12 +108,92 @@ class AanvragenControle {
 
     /**
      * save
-     * 
+     * @global $wpdb, the WordPress Database Interface
      * @param array, array containing filtered user input
      * @return boolean, TRUE on success, otherwise FALSE
     */
     public function save( $input_array ) {
 
+        try {
+
+        /*
+        TODO: 
+            1. DONE - Create an array with all these field names
+            2. Loop over the array elements
+            3. Check whether fields names are not set OR strlen < 1
+            4. If above is yes, throw error
+
+            See Lesopdracht5.pdf for more information (page 5)
+        
+        */
+        
+        // Declare all field names
+        $field_names = array( 'gebruiker-id', 'monsternummer', 'klantnaam', 'Schipnaam', 'motor', 'type-motor', 'serienummer', 'soort-onderzoek', 'monster-datum', 'urenstand-motor', 'merk-olie', 'type-olie', 'urengebruik-olie', 'olie-ververst', 'filters-ververst', 'koelmiddel-gebruikt', 'merk-koelmiddel', 'opmerking' );
+
+        // Loop over all the field names, and check whether they are NOT set OR empty
+        // Otherwise, throw error
+        foreach( $field_names as $field_name) {
+
+            if ( ! isset( $input_array[ $field_name ] ) ) {
+
+                throw new Exception( __( 'Verplicht veld mist' ) );
+
+            }
+
+            if ( strlen( $input_array[ $field_name ] ) < 1 ) {
+
+                throw new Exception( __( 'Verplicht veld is leeg' ) );
+
+            }
+   
+        }
+
+        global $wpdb;
+
+            // Setup insert query
+            $query = "INSERT INTO " . $wpdb->prefix . "oliepor_controle_aanvragen (gebruiker_ID, monsternummer, naam_klant, naam_schip, motor, type_motor, serienummer, soort_onderzoek, monster_datum, urenstand_motor, merk_olie, type_olie, urengebruik_olie, fk_olie_ververst_id, fk_filters_ververst_id, fk_koelmiddel_gebruikt_id, merk_koelmiddel, opmerking) VALUES( %d, %d, %s, %s, %s, %s, %s, %s, %s, %d, %s, %s, %d, %d, %d, %d, %s, %s );";
+
+            // Execute query
+            $wpdb->query( 
+                $wpdb->prepare(
+                    $query,
+                    $input_array[ $field_names[0] ], // gebruiker_ID (be aware: this is NOT the primary key!)
+                    $input_array[ $field_names[1] ], // monsternummer
+                    $input_array[ $field_names[2] ], // klantnaam
+                    $input_array[ $field_names[3] ], // schipnaam
+                    $input_array[ $field_names[4] ], // motor
+                    $input_array[ $field_names[5] ], // type-motor
+                    $input_array[ $field_names[6] ], // serienummer
+                    $input_array[ $field_names[7] ], // soort-onderzoek
+                    $input_array[ $field_names[8] ], // monster-datum
+                    $input_array[ $field_names[9] ], // urenstand-motor
+                    $input_array[ $field_names[10] ], // merk-olie
+                    $input_array[ $field_names[11] ], // type-olie
+                    $input_array[ $field_names[12] ], // urengebruik-olie
+                    $input_array[ $field_names[13] ], // olie-ververst
+                    $input_array[ $field_names[14] ], // filters-ververst
+                    $input_array[ $field_names[15] ], // koelmiddel-gebruikt
+                    $input_array[ $field_names[16] ], // merk-koelmiddel
+                    $input_array[ $field_names[17] ] // opmerking
+                )
+             );
+
+             // Error? It is in there:
+             if ( ! empty( $wpdb->last_error ) ) {
+
+                $this->last_error = $wpdb->last_error;
+                return FALSE;
+
+             }
+            
+        } catch(Exception $exc) {
+            
+            // Shoow the error
+            echo $exc->getMessage();
+            
+        }
+        
+        return TRUE;
 
     }
 
@@ -128,10 +211,10 @@ class AanvragenControle {
 
         $result_array = $wpdb->get_results( "SELECT * FROM " . $wpdb->prefix . "oliepor_controle_aanvragen", ARRAY_A );
 
-        echo __FILE__ . __LINE__ . '<br>';
-        echo '<pre>';
-        var_dump($result_array);
-        echo '</pre>';
+        // echo __FILE__ . __LINE__ . '<br>';
+        // echo '<pre>';
+        // var_dump($result_array);
+        // echo '</pre>';
 
         // For all database results
         foreach( $result_array as $idx => $array ) {
@@ -500,7 +583,7 @@ class AanvragenControle {
     */
     public function getTypeOlie() {
 
-        return $this->type_olie
+        return $this->type_olie;
 
     }
     

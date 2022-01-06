@@ -16,10 +16,10 @@ $base_url = add_query_arg( $params, $base_url );
 // Get the POST data in filtered array
 $post_array = $aanvragen_controle->getPostValues();
 
-// echo __FILE__ . __LINE__ . '<br><br>';
-// echo '<pre>';
-// var_dump($post_array);
-// echo '</pre>';
+echo __FILE__ . __LINE__ . '<br><br>';
+echo '<pre>';
+var_dump($post_array);
+echo '</pre>';
 
 // Check the POST data  
 if ( !empty( $post_array ) ) {
@@ -30,9 +30,20 @@ if ( !empty( $post_array ) ) {
     if ( isset( $post_array['submit'] ) ) {
     
         // Save the user input into the database
-        $aanvragen_controle->save( $post_array );
+        $result = $aanvragen_controle->save( $post_array );
+
+        if ( $result ) {
+
+            // Save was succesful
+            $add = TRUE;
+ 
+        } else {
+
+            // Indicate error
+            $error = TRUE;
+
+        }
         
-        $add = TRUE;
 
     }
 
@@ -51,6 +62,7 @@ if ( !empty( $post_array ) ) {
                 Op deze pagina kunt u een controle aanvragen voor uw oliemonster.
                 </p> <!-- .mb-4 -->
                 <form action="<?php echo $base_url; ?>" method="POST">
+                    <input name="gebruiker-id" type="hidden" required readonly class="form-control-plain-text w-100" id="gebruiker-id" value="<?php echo get_current_user_id(); ?>">
                     <div class="form-group row mb-3">
                         <label for="monsternummer" class="col-sm-3 col-form-label">Monsternummer</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">

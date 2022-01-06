@@ -72,7 +72,8 @@ class DatabaseSetupQueries {
           ) $charset_collate; 
 
           CREATE TABLE $table_names[0] (
-            ID int(10) NOT NULL,
+            controle_ID int(10) NOT NULL AUTO_INCREMENT,
+            gebruiker_ID int(10) NOT NULL,
             monsternummer int(10) NOT NULL,
             fk_status_aanvraag_id int(10) NOT NULL DEFAULT 1,
             naam_klant varchar(255) NOT NULL,
@@ -91,7 +92,7 @@ class DatabaseSetupQueries {
             fk_koelmiddel_gebruikt_id int(10) NOT NULL,
             merk_koelmiddel varchar(255) NOT NULL,
             opmerking varchar(255) DEFAULT NULL,
-            PRIMARY KEY  (ID),
+            PRIMARY KEY  (controle_ID),
             FOREIGN KEY  (fk_status_aanvraag_id) REFERENCES $table_names[4] (ID),
             FOREIGN KEY  (fk_olie_ververst_id) REFERENCES $table_names[3] (ID),
             FOREIGN KEY  (fk_filters_ververst_id) REFERENCES $table_names[1] (ID),

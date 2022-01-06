@@ -134,6 +134,8 @@ class AanvragenControle {
         // Otherwise, throw error
         foreach( $field_names as $field_name) {
 
+            if ( $field_name === $field_names[17] ) continue; // Comment field is optional, and therefore should not throw an error :D
+
             if ( ! isset( $input_array[ $field_name ] ) ) {
 
                 throw new Exception( __( 'Verplicht veld mist' ) );

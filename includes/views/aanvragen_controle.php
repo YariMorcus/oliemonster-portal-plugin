@@ -16,12 +16,27 @@ $base_url = add_query_arg( $params, $base_url );
 // Get the POST data in filtered array
 $post_array = $aanvragen_controle->getPostValues();
 
-echo __FILE__ . __LINE__ . '<br><br>';
-echo '<pre>';
-var_dump($post_array);
-echo '</pre>';
+// echo __FILE__ . __LINE__ . '<br><br>';
+// echo '<pre>';
+// var_dump($post_array);
+// echo '</pre>';
 
+// Check the POST data  
+if ( !empty( $post_array ) ) {
 
+    // Check the add form
+    $add = FALSE;
+
+    if ( isset( $post_array['submit'] ) ) {
+    
+        // Save the user input into the database
+        $aanvragen_controle->save( $post_array );
+        
+        $add = TRUE;
+
+    }
+
+}
 ?>
 <div class="wrap">
     <div class="container">

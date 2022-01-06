@@ -7,7 +7,32 @@
 
 class AanvragenControle {
 
-    //
+    // Class properties
+    private $gebruiker_ID = 0;
+    private $controle_ID = 0;
+    private $monsternummer = 0;
+    private $naam_klant = '';
+    private $naam_schip = '';
+    private $motor = '';
+    private $type_motor = '';
+    private $serienummer = '';
+    private $soort_onderzoek = '';
+    private $monster_datum = '';
+    private $urenstand_motor = 0;
+    private $merk_olie = '';
+    private $type_olie = '';
+    private $urengebruik_olie = 0;
+    private $olie_ververst = 0;
+    private $filters_ververst = 0;
+    private $koelmiddel_gebruikt = 0;
+    private $merk_koelmiddel = '';
+    private $opmerking = '';
+
+    /**
+     * getPostValues
+     * 
+     * @return array, array of filtered input fields
+    */
     public function getPostValues() {
 
         // Define the check for params
@@ -75,6 +100,70 @@ class AanvragenControle {
 
         // Return filtered input
         return $filtered_input;
+
+    }
+
+    /**
+     * save
+     * 
+     * @param array, array containing filtered user input
+     * @return boolean, TRUE on success, otherwise FALSE
+    */
+    public function save( $input_array ) {
+
+
+    }
+
+    /**
+     * getAllCheckRequests
+     * 
+    */
+    public function getAllCheckRequests() {
+
+        global $wpdb;
+
+        $return_array = array();
+
+        $result_array = $wpdb->get_results( "SELECT * FROM " . $wpdb->prefix . "oliepor_controle_aanvragen", ARRAY_A );
+
+        echo __FILE__ . __LINE__ . '<br>';
+        echo '<pre>';
+        var_dump($result_array);
+        echo '</pre>';
+
+        // For all database results
+        foreach( $result_array as $idx => $array ) {
+
+            // Create new object
+            $aanvraag = new AanvragenControle();
+
+            // Set all information
+            $aanvraag->setGebruikerID( $array[ 'gebruiker_ID' ] );
+            $aanvraag->setControleID( $array[ 'controle_ID' ] );
+            $aanvraag->setMonsternummer( $array[ 'monsternummer' ] );
+            $aanvraag->setNaamKlant( $array[ 'naam_klant' ] );
+            $aanvraag->setNaamSchip( $array[ 'naam_schip' ] );
+            $aanvraag->setMotor( $array[ 'motor' ] );
+            $aanvraag->setTypeMotor( $array[ 'type_motor' ] );
+            $aanvraag->setSerienummer( $array[ 'serienummer' ] );
+            $aanvraag->setSoortOnderzoek( $array[ 'soort_onderzoek' ] );
+            $aanvraag->setMonsterDatum( $array[ 'monster_datum' ] );
+            $aanvraag->setUrenstandMotor( $array[ 'urenstand_motor' ] );
+            $aanvraag->setMerkOlie( $array[ 'merk_olie' ] );
+            $aanvraag->setTypeOlie( $array[ 'type_olie' ] );
+            $aanvraag->setUrengebruikOlie( $array[ 'urengebruik_olie' ] );
+            $aanvraag->setOlieVerverst( $array[ 'fk_olie_ververst_id' ] );
+            $aanvraag->setFiltersVerverst( $array[ 'fk_filters_ververst_id' ] );
+            $aanvraag->setKoelmiddelGebruikt( $array[ 'fk_koelmiddel_gebruikt_id' ] );
+            $aanvraag->setMerkKoelmiddel( $array[ 'merk_koelmiddel' ] );
+            $aanvraag->setOpmerking( $array[ 'opmerking' ] );
+
+            // Add new object to array
+            $return_array[] = $aanvraag;
+
+        }
+
+        return $return_array;
 
     }
 

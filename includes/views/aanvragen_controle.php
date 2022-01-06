@@ -61,7 +61,7 @@ if ( !empty( $post_array ) ) {
                 <p class="mb-4">
                 Op deze pagina kunt u een controle aanvragen voor uw oliemonster.
                 </p> <!-- .mb-4 -->
-                <form action="<?php echo $base_url; ?>" method="POST">
+                <form action="<?php echo $base_url; ?>" method="POST" class="needs-validation" novalidate>
                     <input name="gebruiker-id" type="hidden" required readonly class="form-control-plain-text w-100" id="gebruiker-id" value="<?php echo get_current_user_id(); ?>">
                     <div class="form-group row mb-3">
                         <label for="monsternummer" class="col-sm-3 col-form-label">Monsternummer</label>
@@ -74,66 +74,99 @@ if ( !empty( $post_array ) ) {
                         <label for="klantnaam" class="col-sm-3 col-form-label">Klant</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="klantnaam" type="text" required class="form-control-plain-text w-100" id="klantnaam" placeholder="Vul hier uw naam in">
+                            <div class="invalid-feedback">
+                                Naam niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
                         <label for="Schipnaam" class="col-sm-3 col-form-label">Schip</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="Schipnaam" type="text" required class="form-control-plain-text w-100" id="Schipnaam" placeholder="Vul hier de naam van uw schip in">
+                            <div class="invalid-feedback">
+                                Scheepsnaam niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
                         <label for="motor" class="col-sm-3 col-form-label">Motor</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="motor" type="text" required class="form-control-plain-text w-100" id="motor" placeholder="Vul hier uw motor in">
+                            <div class="invalid-feedback">
+                                Motor niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
                         <label for="type" class="col-sm-3 col-form-label">Type</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="type-motor" type="text" required class="form-control-plain-text w-100" id="type" placeholder="Vul hier het type in">
+                            <div class="invalid-feedback">
+                                Type motor niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
                         <label for="serienummer" class="col-sm-3 col-form-label">Serienummer</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="serienummer" type="text" required class="form-control-plain-text w-100" id="serienummer" placeholder="Vul hier het serienummer in">
+                            <div class="invalid-feedback">
+                                Serienummer niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
                         <label for="soort-onderzoek" class="col-sm-3 col-form-label">Soort onderzoek</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="soort-onderzoek" type="text" required class="form-control-plain-text w-100" id="soort-onderzoek" placeholder="Vul hier het soort onderzoek in">
+                            <div class="invalid-feedback">
+                                Soort onderzoek niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
                         <label for="monster-datum" class="col-sm-3 col-form-label">Monster datum</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="monster-datum" type="date" required class="form-control-plain-text w-100" id="monster-datum" placeholder="Vul hier de monster datum in">
+                            <div class="invalid-feedback">
+                                Monster datum niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
                         <label for="urenstand-motor" class="col-sm-3 col-form-label">Urenstand motor</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="urenstand-motor" type="number" required class="form-control-plain-text w-100" id="urenstand-motor" placeholder="Vul hier de urenstand in van de motor">
+                            <div class="invalid-feedback">
+                                Urenstand motor niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
                         <label for="merk-olie" class="col-sm-3 col-form-label">Merk olie</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="merk-olie" type="text" required class="form-control-plain-text w-100" id="merk-olie" placeholder="Vul hier het merk in van de olie">
+                            <div class="invalid-feedback">
+                                Merk olie niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
                         <label for="type-olie" class="col-sm-3 col-form-label">Type olie</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="type-olie" type="text" required class="form-control-plain-text w-100" id="type-olie" placeholder="Vul hier het type in van de olie">
+                            <div class="invalid-feedback">
+                                Type olie niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
                         <label for="urengebruik-olie" class="col-sm-3 col-form-label">Urengebruik olie</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="urengebruik-olie" type="number" required class="form-control-plain-text w-100" id="urengebruik-olie" placeholder="Vul hier het urengebruik in van de olie">
+                            <div class="invalid-feedback">
+                                Urengebruik olie niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
@@ -144,6 +177,9 @@ if ( !empty( $post_array ) ) {
                                 <option value="1">Ja</option>
                                 <option value="2">Nee</option>
                             </select>
+                            <div class="invalid-feedback">
+                                Selecteer ja of nee.
+                            </div>
                         </div> <!-- .col-sm-9 -->
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
@@ -154,6 +190,9 @@ if ( !empty( $post_array ) ) {
                                 <option value="1">Ja</option>
                                 <option value="2">Nee</option>
                             </select>
+                            <div class="invalid-feedback">
+                                Selecteer ja of nee.
+                            </div>
                         </div> <!-- .col-sm-9 -->
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
@@ -164,12 +203,18 @@ if ( !empty( $post_array ) ) {
                                 <option value="1">Ja</option>
                                 <option value="2">Nee</option>
                             </select>
+                            <div class="invalid-feedback">
+                                Selecteer ja of nee.
+                            </div>
                         </div> <!-- .col-sm-9 -->
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
                         <label for="merk-koelmiddel" class="col-sm-3 col-form-label">Merk koelmiddel</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
                             <input name="merk-koelmiddel" type="text" required class="form-control-plain-text w-100" id="merk-koelmiddel" placeholder="Vul hier het merk van uw koelmiddel in">
+                            <div class="invalid-feedback">
+                                Merk koelmiddel niet ingevuld!
+                            </div>
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
@@ -184,3 +229,23 @@ if ( !empty( $post_array ) ) {
         </div> <!-- .row -->
     </div> <!-- .container -->
 </div> <!-- .wrap -->
+
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>

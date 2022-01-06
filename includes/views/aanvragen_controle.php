@@ -16,16 +16,17 @@ $base_url = add_query_arg( $params, $base_url );
 // Get the POST data in filtered array
 $post_array = $aanvragen_controle->getPostValues();
 
-echo __FILE__ . __LINE__ . '<br><br>';
-echo '<pre>';
-var_dump($post_array);
-echo '</pre>';
+// echo __FILE__ . __LINE__ . '<br><br>';
+// echo '<pre>';
+// var_dump($post_array);
+// echo '</pre>';
+
+// Check the add form
+$add = FALSE;
 
 // Check the POST data  
 if ( !empty( $post_array ) ) {
 
-    // Check the add form
-    $add = FALSE;
 
     if ( isset( $post_array['submit'] ) ) {
     
@@ -44,7 +45,6 @@ if ( !empty( $post_array ) ) {
 
         }
         
-
     }
 
 }
@@ -61,6 +61,10 @@ if ( !empty( $post_array ) ) {
                 <p class="mb-4">
                 Op deze pagina kunt u een controle aanvragen voor uw oliemonster.
                 </p> <!-- .mb-4 -->
+
+                <?php 
+                if ( ! $add ) { // If form hasn't been submitted by the user, show the form so user can request a new check
+                ?>
                 <form action="<?php echo $base_url; ?>" method="POST" class="needs-validation" novalidate>
                     <input name="gebruiker-id" type="hidden" required readonly class="form-control-plain-text w-100" id="gebruiker-id" value="<?php echo get_current_user_id(); ?>">
                     <div class="form-group row mb-3">
@@ -225,6 +229,23 @@ if ( !empty( $post_array ) ) {
                     </div> <!-- .form-group -->
                     <button name="submit" type="submit" class="btn mb-3 w-100 form-submit-button">Indienen aanvraag controle</button>
                 </form>
+                <?php 
+                } else { // If form has been submitted, inform user
+
+                    // Setup redirect url
+                    $params = array( 'page' => 'oliemonster-portal-dashboard' );
+                    $redirect_url = add_query_arg( $params, $base_url );
+                    ?>
+                    <p class="aanvraag-ingediend">Aanvraag succesvol ingediend</p>
+                    <script>
+                        // Redirect user back to dashboard after 3 seconds
+                       setTimeout(() => {
+                           window.location.replace("<?php echo $redirect_url; ?>");
+                       }, 3000);
+                    </script>
+                    <?php
+                }
+                ?>
             </div> <!-- .col-md-10 -->
         </div> <!-- .row -->
     </div> <!-- .container -->

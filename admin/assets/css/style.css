@@ -86,4 +86,17 @@ input[type=week] {
   }
 }
 
+.aanvraag-ingediend {
+  padding: 1rem;
+  text-align: center;
+  color: #293133;
+  background-color: #F0B823;
+}
+@media only screen and (min-width: 992px) {
+  .aanvraag-ingediend {
+    max-width: 373px;
+    text-align: left;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

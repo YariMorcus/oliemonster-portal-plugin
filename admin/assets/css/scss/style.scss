@@ -108,3 +108,15 @@ input[type=week] {
         width: 300px !important;
     }
 }
+
+.aanvraag-ingediend {
+    padding: 1rem;
+    text-align: center;
+    color: $outer-space;
+    background-color: $caterpillar-yellow;
+
+    @include media('screen', 'lg') {
+        max-width: 373px;
+        text-align: left;
+    }
+}

@@ -117,6 +117,8 @@ class AanvragenControle {
     /**
      * getAllCheckRequests
      * 
+     * @return array, array containing the objects holding the already registered request checks
+     * 
     */
     public function getAllCheckRequests() {
 
@@ -167,6 +169,309 @@ class AanvragenControle {
 
     }
 
+    /**
+     * setGebruikerID
+     * 
+     * @param int, user ID
+     * if ( is_int( intval( $gebruiker_ID ) ), first get the integer value of the variable, then check if it is an integer before saving it
+    */
+    public function setGebruikerID( $gebruiker_ID ) {
+
+        if ( is_int( intval( $gebruiker_ID ) ) ) {
+
+            $this->gebruiker_ID = $gebruiker_ID;
+
+        }
+
+    }
+
+    /**
+     * setControleID
+     * 
+     * @param int, controle ID
+     * if ( is_int( intval( $controle_ID ) ), first get the integer value of the variable, then check if it is an integer before saving it
+    */
+    public function setControleID( $controle_ID ) {
+
+        if ( is_int( intval( $controle_ID ) ) ) {
+
+            $this->controle_ID = $controle_ID;
+
+        }
+
+    }
+
+    /**
+     * setMonsternummer
+     * 
+     * @param int, sample number
+     * if ( is_int( intval( $monsternummer ) ), first get the integer value of the variable, then check if it is an integer before saving it
+    */
+    public function setMonsternummer( $monsternummer ) {
+
+        if ( is_int( intval( $monsternummer ) ) ) {
+
+            $this->monsternummer = $monsternummer;
+
+        }
+
+    }
+
+    /**
+     * setNaamKlant
+     * 
+     * @param string, name of the customer
+     * if ( is_string( $naam_klant ) ), check whether the given value is a string, if yes, save it
+    */
+    public function setNaamKlant( $naam_klant ) {
+
+        if ( is_string( $naam_klant ) ) {
+
+            $this->naam_klant = trim( $naam_klant );
+
+        }
+
+    }
+
+    /**
+     * setNaamSchip
+     * 
+     * @param string, name of the ship
+     * if ( is_string( $naam_schip ) ), check whether the given value is a string, if yes, save it
+    */
+    public function setNaamSchip( $naam_schip ) {
+
+        if ( is_string( $naam_schip ) ) {
+
+            $this->naam_schip = trim( $naam_schip );
+
+        }
+
+    }
+
+    /**
+     * setMotor
+     * 
+     * @param string, the motor of the ship
+     * if ( is_string( $motor ) ), check whether the given value is a string, if yes, save it
+    */
+    public function setMotor( $motor ) {
+
+        if ( is_string( $motor ) ) {
+
+            $this->motor = trim( $motor );
+
+        }
+
+    }
+
+    /**
+     * setTypeMotor
+     * 
+     * @param string, the type of the motor
+     * if ( is_string( $type_motor ) ), check whether the given value is a string, if yes, save it
+    */
+    public function setTypeMotor( $type_motor ) {
+
+        if ( is_string( $type_motor ) ) {
+
+            $this->type_motor = trim( $type_motor );
+
+        }
+
+    }
+
+    /**
+     * setSerienummer
+     * 
+     * @param string, the serial number
+     * if ( is_string( $serienummer ) ), check whether the given value is a string, if yes, save it
+    */
+    public function setSerienummer( $serienummer ) {
+
+        if ( is_string( $serienummer ) ) {
+
+            $this->serienummer = trim( $serienummer );
+
+        }
+
+    }
+
+    /**
+     * setSoortOnderzoek
+     * 
+     * @param string, the type of research requested by the user
+     * if ( is_string( $soort_onderzoek ) ), check whether the given value is a string, if yes, save it
+    */
+    public function setSoortOnderzoek( $soort_onderzoek ) {
+
+        if ( is_string( $soort_onderzoek ) ) {
+
+            $this->soort_onderzoek = trim( $soort_onderzoek );
+
+        }
+
+    }
+
+    /**
+     * setMonsterDatum
+     * 
+     * @param string, the sample date
+     * if ( is_string( $monster_datum ) ), check whether the given value is a string, if yes, save it
+    */
+    public function setMonsterDatum( $monster_datum ) {
+
+        if ( is_string( $monster_datum ) ) {
+
+            $this->monster_datum = trim( $monster_datum );
+
+        }
+
+    }
+    
+    /**
+     * setUrenstandMotor
+     * 
+     * @param int, the engine hours
+     * if ( is_int( intval( $urenstand_motor ) ), first get the integer value of the variable, then check if it is an integer before saving it
+     */
+    public function setUrenstandMotor( $urenstand_motor ) {
+        
+        if ( is_int( intval( $urenstand_motor ) ) ) {
+            
+            $this->urenstand_motor = $urenstand_motor;
+            
+        }
+        
+    }
+    
+    /**
+     * setMerkOlie
+     * 
+     * @param string, the brand of the oil
+     * if ( is_string( $merk_olie ) ), check whether the given value is a string, if yes, save it
+    */
+    public function setMerkOlie( $merk_olie ) {
+
+        if ( is_string( $merk_olie ) ) {
+
+            $this->merk_olie = trim( $merk_olie );
+
+        }
+
+    }
+    
+    /**
+     * setTypeOlie
+     * 
+     * @param string, the oil type
+     * if ( is_string( $type_olie ) ), check whether the given value is a string, if yes, save it
+    */
+    public function setTypeOlie( $type_olie ) {
+
+        if ( is_string( $type_olie ) ) {
+
+            $this->type_olie = trim( $type_olie );
+
+        }
+
+    }
+   
+    /**
+     * setUrengebruikOlie
+     * 
+     * @param int, the hours of use oil
+     * if ( is_int( intval( $urengebruik_olie ) ), first get the integer value of the variable, then check if it is an integer before saving it
+     */
+    public function setUrengebruikOlie( $urengebruik_olie ) {
+        
+        if ( is_int( intval( $urengebruik_olie ) ) ) {
+            
+            $this->urengebruik_olie = $urengebruik_olie;
+            
+        }
+        
+    }
+   
+    /**
+     * setOlieVerverst
+     * 
+     * @param int, id that indicates if oil has been refreshed or not (1 for YES and 2 for NO)
+     * if ( is_int( intval( $olie_ververst ) ), first get the integer value of the variable, then check if it is an integer before saving it
+     */
+    public function setOlieVerverst( $olie_ververst ) {
+        
+        if ( is_int( intval( $olie_ververst ) ) ) {
+            
+            $this->olie_ververst = $olie_ververst;
+            
+        }
+        
+    }
+   
+    /**
+     * setFiltersVerverst
+     * 
+     * @param int, id that indicates if filters has been refreshed or not (1 for YES and 2 for NO)
+     * if ( is_int( intval( $filters_ververst ) ), first get the integer value of the variable, then check if it is an integer before saving it
+     */
+    public function setFiltersVerverst( $filters_ververst ) {
+        
+        if ( is_int( intval( $filters_ververst ) ) ) {
+            
+            $this->filters_ververst = $filters_ververst;
+            
+        }
+        
+    }
+   
+    /**
+     * setKoelmiddelGebruikt
+     * 
+     * @param int, id that indicates if refrigerant has been refreshed or not (1 for YES and 2 for NO)
+     * if ( is_int( intval( $koelmiddel_gebruikt ) ), first get the integer value of the variable, then check if it is an integer before saving it
+     */
+    public function setKoelmiddelGebruikt( $koelmiddel_gebruikt ) {
+        
+        if ( is_int( intval( $koelmiddel_gebruikt ) ) ) {
+            
+            $this->koelmiddel_gebruikt = $koelmiddel_gebruikt;
+            
+        }
+        
+    }
+        
+    /**
+     * setMerkKoelmiddel
+     * 
+     * @param string, the brand of the refrigerant
+     * if ( is_string( $merk_koelmiddel ) ), check whether the given value is a string, if yes, save it
+    */
+    public function setMerkKoelmiddel( $merk_koelmiddel ) {
+
+        if ( is_string( $merk_koelmiddel ) ) {
+
+            $this->merk_koelmiddel = trim( $merk_koelmiddel );
+
+        }
+
+    }
+        
+    /**
+     * setOpmerking
+     * 
+     * @param string, optional comment of the user
+     * if ( is_string( $opmerking ) ), check whether the given value is a string, if yes, save it
+    */
+    public function setOpmerking( $opmerking ) {
+
+        if ( is_string( $opmerking ) ) {
+
+            $this->opmerking = trim( $opmerking );
+
+        }
+
+    }
 }
 
 ?>

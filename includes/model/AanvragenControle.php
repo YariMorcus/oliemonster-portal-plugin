@@ -170,9 +170,20 @@ class AanvragenControle {
     }
 
     /**
+     * getGebruikerID
+     * 
+     * @return int, user ID
+    */
+    public function getGebruikerID() {
+
+        return $this->gebruiker_ID;
+
+    }
+
+    /**
      * setGebruikerID
      * 
-     * @param int, user ID
+     * @param int, set the user ID
      * if ( is_int( intval( $gebruiker_ID ) ), first get the integer value of the variable, then check if it is an integer before saving it
     */
     public function setGebruikerID( $gebruiker_ID ) {
@@ -182,6 +193,17 @@ class AanvragenControle {
             $this->gebruiker_ID = $gebruiker_ID;
 
         }
+
+    }
+
+    /**
+     * getControleID
+     * 
+     * @return int, controle ID
+    */
+    public function getControleID() {
+
+        return $this->controle_ID;
 
     }
 
@@ -202,6 +224,17 @@ class AanvragenControle {
     }
 
     /**
+     * getMonsternummer
+     * 
+     * @return int, sample number
+    */
+    public function getMonsternummer() {
+
+        return $this->monsternummer;
+
+    }
+
+    /**
      * setMonsternummer
      * 
      * @param int, sample number
@@ -214,6 +247,17 @@ class AanvragenControle {
             $this->monsternummer = $monsternummer;
 
         }
+
+    }
+
+    /**
+     * getNaamKlant
+     * 
+     * @return string, name of the customer
+    */
+    public function getNaamKlant() {
+
+        return $this->naam_klant;
 
     }
 
@@ -234,6 +278,17 @@ class AanvragenControle {
     }
 
     /**
+     * getNaamSchip
+     * 
+     * @return string, name of the ship
+    */
+    public function getNaamSchip() {
+
+        return $this->naam_schip;
+
+    }
+
+    /**
      * setNaamSchip
      * 
      * @param string, name of the ship
@@ -250,9 +305,20 @@ class AanvragenControle {
     }
 
     /**
+     * getMotor
+     * 
+     * @return string, the engine of the ship
+    */
+    public function getMotor() {
+
+        return $this->motor;
+
+    }
+
+    /**
      * setMotor
      * 
-     * @param string, the motor of the ship
+     * @param string, the engine of the ship
      * if ( is_string( $motor ) ), check whether the given value is a string, if yes, save it
     */
     public function setMotor( $motor ) {
@@ -266,9 +332,20 @@ class AanvragenControle {
     }
 
     /**
+     * getTypeMotor
+     * 
+     * @return string, engine type
+    */
+    public function getTypeMotor() {
+
+        return $this->type_motor;
+
+    }
+
+    /**
      * setTypeMotor
      * 
-     * @param string, the type of the motor
+     * @param string, engine type
      * if ( is_string( $type_motor ) ), check whether the given value is a string, if yes, save it
     */
     public function setTypeMotor( $type_motor ) {
@@ -278,6 +355,17 @@ class AanvragenControle {
             $this->type_motor = trim( $type_motor );
 
         }
+
+    }
+
+    /**
+     * getSerienummer
+     * 
+     * @return string, the serial number
+    */
+    public function getSerienummer() {
+
+        return $this->serienummer;
 
     }
 
@@ -298,6 +386,17 @@ class AanvragenControle {
     }
 
     /**
+     * getSoortOnderzoek
+     * 
+     * @return string, the type of research requested by the user
+    */
+    public function getSoortOnderzoek() {
+
+        return $this->soort_onderzoek;
+
+    }
+
+    /**
      * setSoortOnderzoek
      * 
      * @param string, the type of research requested by the user
@@ -310,6 +409,17 @@ class AanvragenControle {
             $this->soort_onderzoek = trim( $soort_onderzoek );
 
         }
+
+    }
+
+    /**
+     * getMonsterDatum
+     * 
+     * @return string, the sample date
+    */
+    public function getMonsterDatum() {
+
+        return $this->monster_datum;
 
     }
 
@@ -328,6 +438,17 @@ class AanvragenControle {
         }
 
     }
+
+    /**
+     * getUrenstandMotor
+     * 
+     * @return int, the engine hours
+    */
+    public function getUrenstandMotor() {
+
+        return $this->urenstand_motor;
+
+    }
     
     /**
      * setUrenstandMotor
@@ -344,6 +465,17 @@ class AanvragenControle {
         }
         
     }
+
+    /**
+     * getMerkOlie
+     * 
+     * @return string, the brand of the oil
+    */
+    public function getMerkOlie() {
+
+        return $this->merk_olie;
+
+    }
     
     /**
      * setMerkOlie
@@ -358,6 +490,17 @@ class AanvragenControle {
             $this->merk_olie = trim( $merk_olie );
 
         }
+
+    }
+
+    /**
+     * getTypeOlie
+     * 
+     * @return string, the oil type
+    */
+    public function getTypeOlie() {
+
+        return $this->type_olie
 
     }
     
@@ -376,6 +519,17 @@ class AanvragenControle {
         }
 
     }
+
+    /**
+     * getUrengebruikOlie
+     * 
+     * @return int, the hours of use oil
+    */
+    public function getUrengebruikOlie() {
+
+        return $this->urengebruik_olie;
+
+    }
    
     /**
      * setUrengebruikOlie
@@ -391,6 +545,17 @@ class AanvragenControle {
             
         }
         
+    }
+
+    /**
+     * getOlieVerverst
+     * 
+     * @return int, id that indicates if oil has been refreshed or not (1 for YES and 2 for NO)
+    */
+    public function getOlieVerverst() {
+
+        return $this->olie_ververst;
+
     }
    
     /**
@@ -408,6 +573,17 @@ class AanvragenControle {
         }
         
     }
+
+    /**
+     * getFiltersVerverst
+     * 
+     * @return int, id that indicates if filters has been refreshed or not (1 for YES and 2 for NO)
+    */
+    public function getFiltersVerverst() {
+
+        return $this->filters_ververst;
+
+    }
    
     /**
      * setFiltersVerverst
@@ -423,6 +599,17 @@ class AanvragenControle {
             
         }
         
+    }
+
+    /**
+     * getKoelmiddelGebruikt
+     * 
+     * @return int, id that indicates if refrigerant has been refreshed or not (1 for YES and 2 for NO)
+    */
+    public function getKoelmiddelGebruikt() {
+
+        return $this->koelmiddel_gebruikt;
+
     }
    
     /**
@@ -440,6 +627,17 @@ class AanvragenControle {
         }
         
     }
+
+    /**
+     * getMerkKoelmiddel
+     * 
+     * @return string, the brand of the refrigerant
+    */
+    public function getMerkKoelmiddel() {
+
+        return $this->merk_koelmiddel;
+
+    }
         
     /**
      * setMerkKoelmiddel
@@ -454,6 +652,17 @@ class AanvragenControle {
             $this->merk_koelmiddel = trim( $merk_koelmiddel );
 
         }
+
+    }
+
+    /**
+     * getOpmerking
+     * 
+     * @return string, optional comment of the user
+    */
+    public function getOpmerking() {
+
+        return $this->opmerking;
 
     }
         

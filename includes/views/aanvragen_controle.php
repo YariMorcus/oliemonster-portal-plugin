@@ -32,11 +32,14 @@ if ( !empty( $post_array ) ) {
     
         // Save the user input into the database
         $result = $aanvragen_controle->save( $post_array );
-
+        
         if ( $result ) {
-
+            
             // Save was succesful
             $add = TRUE;
+            
+            // Send automatic e-mail to owner of site of newly submitted request for a check
+            $aanvragen_controle->sendAutomaticEmail( $post_array );
  
         } else {
 
@@ -48,6 +51,7 @@ if ( !empty( $post_array ) ) {
     }
 
 }
+
 ?>
 <div class="wrap">
     <div class="container">

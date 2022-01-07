@@ -785,7 +785,7 @@ class AanvragenControle {
             global $wpdb;
 
             // Define the e-mail adres where this message has to be send to
-            $emailadres = 'yarimorcus@gmail.com';
+            $emailadres = get_option( 'admin_email' );
 
             // Define the subject
             $subject = $input_array[ 'klantnaam'] . " met monsternummer " . $input_array[ 'monsternummer' ] . " heeft nieuwe aanvraag ingediend.";

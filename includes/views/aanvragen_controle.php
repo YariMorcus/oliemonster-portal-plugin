@@ -16,10 +16,22 @@ $base_url = add_query_arg( $params, $base_url );
 // Get the POST data in filtered array
 $post_array = $aanvragen_controle->getPostValues();
 
-// echo __FILE__ . __LINE__ . '<br><br>';
-// echo '<pre>';
-// var_dump($post_array);
-// echo '</pre>';
+// Generate a random sample number
+$sample_number = $aanvragen_controle->generateRandomSampleNumber();
+
+// Check whether the sample number already exists
+$sample_number_exists = $aanvragen_controle->doesSampleNumberExist( $sample_number );
+
+// Check if sample number already exists
+// If yes, generate a new sample number, and check again if it exists
+// If it does not exists yet, implement it in the value attr. of the corresponding input element
+if ( $sample_number_exists OR strlen($sample_number) < 7 ) {
+
+    $sample_number = $aanvragen_controle->generateRandomSampleNumber();
+
+    $sample_number_exists = $aanvragen_controle->doesSampleNumberExist( $sample_number );    
+
+}
 
 // Check the add form
 $add = FALSE;
@@ -74,7 +86,7 @@ if ( !empty( $post_array ) ) {
                     <div class="form-group row mb-3">
                         <label for="monsternummer" class="col-sm-3 col-form-label">Monsternummer</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
-                            <input name="monsternummer" type="number" required readonly class="form-control-plain-text w-100" id="monsternummer" aria-describedby="monsternummer-help" value="1203232">
+                            <input name="monsternummer" type="number" required readonly class="form-control-plain-text w-100" id="monsternummer" aria-describedby="monsternummer-help" value="<?php echo $sample_number; ?>">
                             <small id="monsternummer-help" class="form-text text-muted d-block">U kunt dit nummer niet wijzigen. Dit wordt automatisch toegekend.</small>
                         </div>
                     </div> <!-- .form-group -->

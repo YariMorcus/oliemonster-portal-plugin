@@ -790,9 +790,6 @@ class AanvragenControle {
             // Define the subject
             $subject = $input_array[ 'klantnaam'] . " met monsternummer " . $input_array[ 'monsternummer' ] . " heeft nieuwe aanvraag ingediend.";
 
-            // Under title, filled in form must be in the same order as the form
-            // Install https://nl.wordpress.org/plugins/wp-mail-smtp/ to make mail function work
-
             // Define the title (<h1>)
             $title = "<h1>" . $input_array[ 'klantnaam'] . " met monsternummer " . $input_array[ 'monsternummer' ] . " heeft nieuwe aanvraag ingediend.</h1>";
 
@@ -806,11 +803,6 @@ class AanvragenControle {
             // Remove the first field name (gebruiker-id).
             // Gebruiker-id won't be shown in the e-mail
             array_shift( $field_names );
-            
-            // echo __FILE__ . __LINE__ . "<br><br>";
-            // print_r($form_labels);
-            // echo '<br><br>';
-            // print_r($field_names);
 
             // Create opening HTML tags
             $table_open = $title . "<table><tbody>";
@@ -868,6 +860,50 @@ class AanvragenControle {
             echo $exc->getMessage();
 
             return FALSE;
+        }
+
+    }
+
+    /**
+     * generateRandomSampleNumber
+     * @return int, random generated sample number
+    */
+    public function generateRandomSampleNumber() {
+
+        // Generate a random sample number (monsternummer)
+        $sample_number = random_int( 0, 9999999 );
+
+        return $sample_number;
+
+    }
+
+    /**
+     * doesSampleNumberExist
+     * 
+     * @global $wpdb, WordPress Database Interface
+     * @param int, random generated sample number
+    */
+    public function doesSampleNumberExist( $sample_number ) {
+
+        global $wpdb;
+
+        // Setup query
+        $query = "SELECT EXISTS( SELECT `monsternummer` FROM `" . $wpdb->prefix . "oliepor_controle_aanvragen` WHERE`monsternummer` = %d) 
+        AS `gevonden`";
+
+        // Execute query (lookup whether sample number already exists or not)
+        $result = $wpdb->get_results( $wpdb->prepare( $query, $sample_number ), OBJECT );
+
+        // If sample number exists, return TRUE, otherwise FALSE
+        // 1 indicates TRUE, 0 FALSE
+        if ( $result[0]->gevonden === 1 ) {
+
+            return TRUE;
+
+        } else {
+
+            return FALSE;
+
         }
 
     }

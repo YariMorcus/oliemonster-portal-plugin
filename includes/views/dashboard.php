@@ -4,7 +4,7 @@
 $base_url = get_admin_url() . 'admin.php';
 
 // Setup parameters
-$params = array( 'page' => 'oliemonster-portal-aanvragen-controle' );
+$params = array( 'page' => 'aanvragen_controle' );
 
 // Setup anchor link
 $aanvragen_controle_link = add_query_arg( $params, $base_url );

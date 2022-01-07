@@ -61,12 +61,14 @@ input[type=tel],
 input[type=text],
 input[type=time],
 input[type=url],
-input[type=week] {
+input[type=week],
+.wp-core-ui select,
+textarea {
   border: 1px solid #293133 !important;
 }
 
 .wp-core-ui select {
-  border-color: red !important;
+  height: 34px !important;
 }
 
 .form-submit-button {

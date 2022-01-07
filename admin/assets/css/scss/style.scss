@@ -89,6 +89,10 @@ input[type=week],
 .wp-core-ui select,
 textarea {
     border: 1px solid $outer-space !important;
+
+    &:invalid {
+        border: 1px solid $error-color !important;
+    }
 }
 
 .wp-core-ui select {

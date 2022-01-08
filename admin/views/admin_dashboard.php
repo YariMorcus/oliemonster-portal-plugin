@@ -1,3 +1,13 @@
+<?php 
+
+// Include the model
+require_once OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/AanvragenControle.php';
+
+// Declare class variable
+$aanvragen_controle = new AanvragenControle();
+
+?>
+
 <div class="wrap">
     <div class="container">
         <div class="row">
@@ -29,18 +39,30 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1203232</td>
-                                    <td>Yari Morcus</td>
-                                    <td>Brandstofvermenging</td>
-                                    <td><button class="portal-button portal-button-small">Bekijk aanvraag</button></td>
-                                </tr>
-                                <tr>
+                                <?php 
+                                    // Get all requested checks
+                                    $check_list = $aanvragen_controle->getAllCheckRequests();
+
+                                    // Loop over every check request and fill in the table
+                                    foreach( $check_list as $check) {
+                                    
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $check->monsternummer; ?></td>
+                                            <td><?php echo $check->naam_klant; ?></td>
+                                            <td><?php echo $check->soort_onderzoek; ?></td>
+                                            <td><button class="portal-button portal-button-small">Bekijk aanvraag</button></td>
+                                        </tr>                                    
+                                        <?php
+                                    
+                                    }
+                                ?>
+                                <!-- <tr>
                                     <td>2930572</td>
                                     <td>John Doe</td>
                                     <td>Brandpunt</td>
                                     <td><button class="portal-button portal-button-small">Bekijk aanvraag</button></td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table> <!-- .table -->
                     </div> <!-- .table-responsive -->

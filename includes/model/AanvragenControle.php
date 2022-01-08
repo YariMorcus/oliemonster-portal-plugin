@@ -8,25 +8,25 @@
 class AanvragenControle {
 
     // Class properties
-    private $gebruiker_ID = 0;
-    private $controle_ID = 0;
-    private $monsternummer = 0;
-    private $naam_klant = '';
-    private $naam_schip = '';
-    private $motor = '';
-    private $type_motor = '';
-    private $serienummer = '';
-    private $soort_onderzoek = '';
-    private $monster_datum = '';
-    private $urenstand_motor = 0;
-    private $merk_olie = '';
-    private $type_olie = '';
-    private $urengebruik_olie = 0;
-    private $olie_ververst = 0;
-    private $filters_ververst = 0;
-    private $koelmiddel_gebruikt = 0;
-    private $merk_koelmiddel = '';
-    private $opmerking = '';
+    public $gebruiker_ID = 0;
+    public $controle_ID = 0;
+    public $monsternummer = 0;
+    public $naam_klant = '';
+    public $naam_schip = '';
+    public $motor = '';
+    public $type_motor = '';
+    public $serienummer = '';
+    public $soort_onderzoek = '';
+    public $monster_datum = '';
+    public $urenstand_motor = 0;
+    public $merk_olie = '';
+    public $type_olie = '';
+    public $urengebruik_olie = 0;
+    public $olie_ververst = 0;
+    public $filters_ververst = 0;
+    public $koelmiddel_gebruikt = 0;
+    public $merk_koelmiddel = '';
+    public $opmerking = '';
 
     /**
      * getPostValues
@@ -907,6 +907,10 @@ class AanvragenControle {
         }
 
     }
+
+    /**
+     * 
+    */
 }
 
 ?>

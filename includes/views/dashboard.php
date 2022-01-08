@@ -27,7 +27,7 @@ $aanvragen_controle_link = add_query_arg( $params, $base_url );
                 </p> <!-- .mb-4 -->
                 <section class="mb-4">
                     <h2 class="h2 mb-4">Snelle navigatie</h2>
-                    <a href="<?php echo $aanvragen_controle_link; ?>" class="btn portal-button">Aanvragen controle</a>
+                    <a href="<?php echo $aanvragen_controle_link; ?>" class="btn portal-button portal-button-large">Aanvragen controle</a>
                 </section> <!-- .mb-4 -->
                 <section>
                     <h2 class="h2 mb-4">Overzicht ingediende aanvragen</h2>

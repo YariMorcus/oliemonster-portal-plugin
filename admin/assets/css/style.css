@@ -29,6 +29,10 @@ p {
   padding: 1rem 0.5rem !important;
 }
 
+.table td {
+  vertical-align: middle;
+}
+
 .btn-check:focus + .btn, .btn:focus {
   outline: 0;
   box-shadow: 0 0 0 0.1rem #000 !important;
@@ -95,12 +99,22 @@ textarea:invalid {
 }
 
 .portal-button {
+  background-color: #F0B823 !important;
+  border: 1px solid #293133;
+  border-radius: 4px;
+}
+
+.portal-button-small {
+  width: 183px;
+  height: 40px;
+}
+
+.portal-button-large {
   width: 100%;
   height: 125px;
-  background-color: #F0B823 !important;
 }
 @media only screen and (min-width: 992px) {
-  .portal-button {
+  .portal-button-large {
     width: 300px !important;
   }
 }

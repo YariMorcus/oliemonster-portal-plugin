@@ -6,15 +6,15 @@
                     class="img-fluid d-block mx-auto" width="140" height="79">
             </div> <!-- .col-md-2 -->
             <div class="col-md-10 col-lg-7">
-                <h1 class="h1 mb-4">Admin Dashboard</h1>
+                <h1 class="h1 mb-4">Dashboard</h1>
                 <p class="mb-4">
-                    Dit is het dashboard van het 'Oliemonster portal'. Deze pagina toont niet alleen het overzicht van
-                    uw ingediende aanvragen, voor het controleren van de oliemonsters, maar ook een button waarmee u een
-                    controle kunt aanvragen.
+                Dit is het dashboard van het project 'Het Oliemonster'.
+                Deze pagina toont niet alleen het overzicht van de ingediende aanvragen, voor het controleren van de oliemonsters,
+                maar ook een button waarmee u testresultaten kunt verwerken.
                 </p> <!-- .mb-4 -->
                 <section class="mb-4">
                     <h2 class="h2 mb-4">Snelle navigatie</h2>
-                    <button class="btn portal-button">Aanvragen controle</button>
+                    <a href="#" class="btn portal-button portal-button-large">Verwerken testresultaten</a>
                 </section> <!-- .mb-4 -->
                 <section>
                     <h2 class="h2 mb-4">Overzicht ingediende aanvragen</h2>
@@ -23,20 +23,23 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Monsternummer</th>
+                                    <th scope="col">Klant</th>
                                     <th scope="col">Soort onderzoek</th>
-                                    <th scope="col">Status controle</th>
+                                    <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1203232</td>
+                                    <td>Yari Morcus</td>
                                     <td>Brandstofvermenging</td>
-                                    <td><span class="">Sample nog niet ontvangen</span></td>
+                                    <td><button class="portal-button portal-button-small">Bekijk aanvraag</button></td>
                                 </tr>
                                 <tr>
                                     <td>2930572</td>
+                                    <td>John Doe</td>
                                     <td>Brandpunt</td>
-                                    <td><span class="">Afgehandeld</span></td>
+                                    <td><button class="portal-button portal-button-small">Bekijk aanvraag</button></td>
                                 </tr>
                             </tbody>
                         </table> <!-- .table -->

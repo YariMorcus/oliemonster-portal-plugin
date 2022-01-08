@@ -11,7 +11,7 @@ $read-only: #EEEEEE;
 // $feature = media feature such as min-width
 //
 // @content means that you can provide the css within the curly braces { } when calling this mixin with @include
-// (see class .portal-button for an example
+// (see class .portal-button-large for an example
 //
 // @author Yari Morcus
 @mixin media($type, $feature) {
@@ -52,6 +52,10 @@ p {
 
 .table>:not(caption)>*>* {
     padding: 1rem .5rem !important;
+}
+
+.table td {
+    vertical-align: middle;
 }
 
 .btn-check:focus+.btn, .btn:focus {
@@ -106,9 +110,19 @@ textarea {
 }
 
 .portal-button {
+    background-color: $caterpillar-yellow !important;
+    border: 1px solid $outer-space;
+    border-radius: 4px;
+}
+
+.portal-button-small {
+    width: 183px;
+    height: 40px;
+}
+
+.portal-button-large {
     width: 100%;
     height: 125px;
-    background-color: $caterpillar-yellow !important;
 
     @include media('screen', 'lg') {
         width: 300px !important;

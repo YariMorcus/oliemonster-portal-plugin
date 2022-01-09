@@ -84,6 +84,22 @@ class OliemonsterPortal_AdminController {
             array( 'OliemonsterPortal_AdminController', 'subscriberRequestCheckPage' )            
         );
 
+        add_submenu_page(
+            // $parent_slug, The slug name for the parent menu (or the file name of a standard WordPress admin page)
+            null,
+            // $page_title, The text to be displayed in the title tags of the page when the menu is selected
+            __( 'Bekijken gegevens controle' ),
+            // $menu_title, The text to be used for the menu.
+            null,
+            // $capability, The capability required for this menu to be displayed to the user
+            'oliepor_admin_view_dashboard',
+            // $menu_slug, The slug name to refer to this menu by. Should be unique for this menu page
+            'bekijken_gegevens',
+            // $function, The function to be called to output the content for this page
+            array( 'OliemonsterPortal_AdminController', 'viewDataRequestCheckPage' )
+
+        );
+
         // Add menu page for subscribers only
         // add_menu_page(
         //     // $page_title, The text to be displayed in the title tags of the page when the menu is selected
@@ -133,6 +149,16 @@ class OliemonsterPortal_AdminController {
 
         // Include the view for this menu page
         include OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_VIEWS_DIR . '/aanvragen_controle.php';
+
+    }
+
+    /**
+     * viewDataRequestCheckPage
+    */
+    static function viewDataRequestCheckPage() {
+
+        // Include the view for this menu page
+        include OLIEMONSTER_PORTAL_PLUGIN_ADMIN_VIEWS_DIR . '/admin_inzien_gegevens.php';
 
     }
 

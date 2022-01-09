@@ -913,7 +913,7 @@ class AanvragenControle {
      * 
      * @global wpdb, the WordPress Database Interface
      * @param int, the controle ID used to get the information out of the database
-     * @return array, array containing object that holds the information. If no information could be found, return FALSE
+     * @return object, object containing the information. If no information could be found, return FALSE
      * 
     */
     public function getInformationSpecificRequest( $controle_ID ) {

@@ -48,8 +48,7 @@ $base_url = get_admin_url() . 'admin.php';
 
                                     // Loop over every check request and fill in the table
                                     foreach( $check_list as $check) {
-                                    echo $check->controle_ID;
-
+                                        
                                     $params = array( 'page' => 'bekijken_gegevens', 'controle_id' => $check->controle_ID );
                                     $update_url = add_query_arg( $params, $base_url );
                                         ?>

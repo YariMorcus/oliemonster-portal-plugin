@@ -6,6 +6,9 @@ require_once OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/AanvragenControle.
 // Declare class variable
 $aanvragen_controle = new AanvragenControle();
 
+// Set base url for this page
+$base_url = get_admin_url() . 'admin.php';
+
 ?>
 
 <div class="wrap">
@@ -45,13 +48,16 @@ $aanvragen_controle = new AanvragenControle();
 
                                     // Loop over every check request and fill in the table
                                     foreach( $check_list as $check) {
-                                    
+                                    echo $check->controle_ID;
+
+                                    $params = array( 'page' => 'bekijken_gegevens', 'controle_id' => $check->controle_ID );
+                                    $update_url = add_query_arg( $params, $base_url );
                                         ?>
                                         <tr>
                                             <td><?php echo $check->monsternummer; ?></td>
                                             <td><?php echo $check->naam_klant; ?></td>
                                             <td><?php echo $check->soort_onderzoek; ?></td>
-                                            <td><button class="portal-button portal-button-small">Bekijk aanvraag</button></td>
+                                            <td><a href="<?php echo $update_url; ?>" class="portal-button portal-button-small">Bekijk aanvraag</a></td>
                                         </tr>                                    
                                         <?php
                                     

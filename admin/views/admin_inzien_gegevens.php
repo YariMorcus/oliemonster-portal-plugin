@@ -46,6 +46,48 @@ if ( isset( $_GET['controle_id'] ) ) {
                             </div>
                         </div> <!-- .form-group -->
                         <div class="form-group row mb-3">
+                            <label for="status-aanvraag" class="col-sm-3 col-form-label">Status aanvraag</label>
+                            <div class="col-sm-9 col-lg-9 col-xl-6">
+                                <select name="status-aanvraag" id="status-aanvraag" required disabled class="custom-select w-100">
+                                    <?php 
+                                    define( 'SAMPLE_NOG_NIET_ONTVANGEN', 1 );
+                                    define( 'IN_BEHANDELING', 2 );
+                                    define( 'AFGEHANDELD', 3 );
+
+                                    // If status is 'Sample nog niet ontvangen', show this option element first
+                                    if ( intval( $information_request->fk_status_aanvraag_id ) === SAMPLE_NOG_NIET_ONTVANGEN ) {
+                                        ?>
+                                        <option selected="selected" value="1">Sample nog niet ontvangen</option>
+                                        <option value="2">In behandeling</option>
+                                        <option value="3">Afgehandeld</option>
+                                        <?php
+                                    }
+                                    
+                                    // If status is 'In behandeling', show this option element first
+                                    if ( intval( $information_request->fk_status_aanvraag_id ) === IN_BEHANDELING ) {
+                                        ?>
+                                        <option value="1">Sample nog niet ontvangen</option>
+                                        <option selected="selected" value="2">In behandeling</option>
+                                        <option value="3">Afgehandeld</option>
+                                        <?php
+                                    }
+
+                                    // If status is 'Afgehandeld', show this option element first
+                                    if ( intval( $information_request->fk_status_aanvraag_id ) === AFGEHANDELD ) {
+                                        ?>
+                                        <option value="1">Sample nog niet ontvangen</option>
+                                        <option value="2">In behandeling</option>
+                                        <option selected="selected" value="3">Afgehandeld</option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Selecteer ja of nee.
+                                </div>
+                            </div> <!-- .col-sm-9 -->
+                        </div> <!-- .form-group -->
+                        <div class="form-group row mb-3">
                             <label for="klantnaam" class="col-sm-3 col-form-label">Klant</label>
                             <div class="col-sm-9 col-lg-9 col-xl-6">
                                 <input name="klantnaam" type="text" required readonly class="form-control-plain-text w-100" id="klantnaam" placeholder="Vul hier uw naam in" value="<?php echo $information_request->naam_klant; ?>">

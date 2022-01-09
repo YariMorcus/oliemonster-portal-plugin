@@ -909,8 +909,38 @@ class AanvragenControle {
     }
 
     /**
+     * getInformationSpecificRequest
+     * 
+     * @global wpdb, the WordPress Database Interface
+     * @param int, the controle ID used to get the information out of the database
+     * @return array, array containing object that holds the information. If no information could be found, return FALSE
      * 
     */
+    public function getInformationSpecificRequest( $controle_ID ) {
+
+        global $wpdb;
+
+        // Setup query
+        $query = "SELECT * FROM " . $wpdb->prefix .  "oliepor_controle_aanvragen WHERE `controle_ID` = %d";
+
+        // Execute query (get all information based on given controle ID)
+        // get_row is used because we only want ONE row to be returned (there CANNOT be more than 1 row with the same controle ID)
+        $result = $wpdb->get_row( $wpdb->prepare( $query, $controle_ID ), OBJECT );
+
+        // If WordPress could get the corresponding information, return the information
+        // Otherwise, return FALSE
+        if ( $result ) {
+
+            return $result;
+
+        } else {
+
+            return FALSE;
+
+        }
+
+
+    }
 }
 
 ?>

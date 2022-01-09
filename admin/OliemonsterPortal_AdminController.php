@@ -86,6 +86,8 @@ class OliemonsterPortal_AdminController {
 
         add_submenu_page(
             // $parent_slug, The slug name for the parent menu (or the file name of a standard WordPress admin page)
+            // Null indicates that it is an admin page, but should NOT be showed as a menu item
+            // This page is ONLY accessible from the dashboard
             null,
             // $page_title, The text to be displayed in the title tags of the page when the menu is selected
             __( 'Bekijken gegevens controle' ),

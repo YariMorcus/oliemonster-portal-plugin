@@ -36,6 +36,9 @@ if ( isset( $_GET['controle_id'] ) ) {
                     <p class="mb-4">
                     Deze pagina geeft de ingevulde gegevens weer van monsternummer <?php echo $information_request->monsternummer; ?>.
                     </p> <!-- .mb-4 -->
+                    <p class="mb-4 d-lg-none">
+                    Houdt er rekening mee dat op mobiel deze gegevens niet bewerkt kunnen worden.
+                    </p>
                     <form action="<?php echo $base_url; ?>" method="POST" class="needs-validation" novalidate>
                         <input name="gebruiker-id" type="hidden" required readonly class="form-control-plain-text w-100" id="gebruiker-id" value="<?php echo get_current_user_id(); ?>">
                         <div class="form-group row mb-3">

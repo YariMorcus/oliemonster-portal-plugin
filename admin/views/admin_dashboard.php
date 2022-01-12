@@ -14,15 +14,15 @@ $base_url = get_admin_url() . 'admin.php';
 <div class="wrap">
     <div class="container">
         <div class="row">
-            <div class="col-md-2 col-lg-3">
+            <div class="col-md-2 col-lg-2">
                 <img src="<?php echo plugin_dir_url( __DIR__ ); ?>/assets/img/logo-oliemonster.jpg" alt=""
                     class="img-fluid d-block mx-auto" width="140" height="79">
             </div> <!-- .col-md-2 -->
-            <div class="col-md-10 col-lg-7">
+            <div class="col-md-10 col-lg-9">
                 <h1 class="h1 mb-4">Dashboard</h1>
                 <p class="mb-4">
-                Dit is het dashboard van het project 'Het Oliemonster'.
-                Deze pagina toont niet alleen het overzicht van de ingediende aanvragen, voor het controleren van de oliemonsters,
+                Dit is het dashboard van het project 'Het Oliemonster'.<br>
+                Deze pagina toont niet alleen het overzicht van de ingediende aanvragen, voor het controleren van de oliemonsters,<br>
                 maar ook een button waarmee u testresultaten kunt verwerken.
                 </p> <!-- .mb-4 -->
                 <section class="mb-4">

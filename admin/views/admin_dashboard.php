@@ -25,53 +25,57 @@ $base_url = get_admin_url() . 'admin.php';
                 Deze pagina toont niet alleen het overzicht van de ingediende aanvragen, voor het controleren van de oliemonsters,<br>
                 maar ook een button waarmee u testresultaten kunt verwerken.
                 </p> <!-- .mb-4 -->
-                <section class="mb-4">
-                    <h2 class="h2 mb-4">Snelle navigatie</h2>
-                    <a href="#" class="btn portal-button portal-button-large">Verwerken testresultaten</a>
-                </section> <!-- .mb-4 -->
-                <section>
-                    <h2 class="h2 mb-4">Overzicht ingediende aanvragen</h2>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Monsternummer</th>
-                                    <th scope="col">Klant</th>
-                                    <th scope="col">Soort onderzoek</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                    // Get all requested checks
-                                    $check_list = $aanvragen_controle->getAllCheckRequests();
-
-                                    // Loop over every check request and fill in the table
-                                    foreach( $check_list as $check) {
-                                        
-                                    $params = array( 'page' => 'bekijken_gegevens', 'controle_id' => $check->controle_ID );
-                                    $update_url = add_query_arg( $params, $base_url );
-                                        ?>
+                <div class="container remove-padding">
+                    <div class="row">
+                        <section class="mb-4 col order-lg-last mt-lg-4">
+                            <h2 class="h2 mb-4">Snelle navigatie</h2>
+                            <a href="#" class="btn portal-button portal-button-large">Verwerken testresultaten</a>
+                        </section> <!-- .mb-4 -->
+                        <section class="col order-lg-first">
+                            <h2 class="h2 mb-4">Overzicht ingediende aanvragen</h2>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
                                         <tr>
-                                            <td><?php echo $check->monsternummer; ?></td>
-                                            <td><?php echo $check->naam_klant; ?></td>
-                                            <td><?php echo $check->soort_onderzoek; ?></td>
-                                            <td><a href="<?php echo $update_url; ?>" class="portal-button portal-button-small">Bekijk aanvraag</a></td>
-                                        </tr>                                    
-                                        <?php
-                                    
-                                    }
-                                ?>
-                                <!-- <tr>
-                                    <td>2930572</td>
-                                    <td>John Doe</td>
-                                    <td>Brandpunt</td>
-                                    <td><button class="portal-button portal-button-small">Bekijk aanvraag</button></td>
-                                </tr> -->
-                            </tbody>
-                        </table> <!-- .table -->
-                    </div> <!-- .table-responsive -->
-                </section>
+                                            <th scope="col">Monsternummer</th>
+                                            <th scope="col">Klant</th>
+                                            <th scope="col">Soort onderzoek</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php 
+                                            // Get all requested checks
+                                            $check_list = $aanvragen_controle->getAllCheckRequests();
+        
+                                            // Loop over every check request and fill in the table
+                                            foreach( $check_list as $check) {
+                                                
+                                            $params = array( 'page' => 'bekijken_gegevens', 'controle_id' => $check->controle_ID );
+                                            $update_url = add_query_arg( $params, $base_url );
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $check->monsternummer; ?></td>
+                                                    <td><?php echo $check->naam_klant; ?></td>
+                                                    <td><?php echo $check->soort_onderzoek; ?></td>
+                                                    <td><a href="<?php echo $update_url; ?>" class="portal-button portal-button-small">Bekijk aanvraag</a></td>
+                                                </tr>                                    
+                                                <?php
+                                            
+                                            }
+                                        ?>
+                                        <!-- <tr>
+                                            <td>2930572</td>
+                                            <td>John Doe</td>
+                                            <td>Brandpunt</td>
+                                            <td><button class="portal-button portal-button-small">Bekijk aanvraag</button></td>
+                                        </tr> -->
+                                    </tbody>
+                                </table> <!-- .table -->
+                            </div> <!-- .table-responsive -->
+                        </section>
+                    </div>
+                </div>
             </div> <!-- .col-md-10 -->
         </div> <!-- .row -->
     </div> <!-- .container -->

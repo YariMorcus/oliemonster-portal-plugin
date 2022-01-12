@@ -15,6 +15,10 @@ tr:last-child {
   border-bottom: 1px solid #707070 !important;
 }
 
+.remove-padding {
+  padding: 0 !important;
+}
+
 .badge.sample-niet-ontvangen,
 .badge.badge.afgehandeld {
   display: flex;

@@ -17,8 +17,6 @@ class OliemonsterPortal_AdminController {
     */
     static function prepare() {
 
-        // Check if current user is an administrator
-
             // Add the sidebar menu structure
             add_action( 'admin_menu', array( 'OliemonsterPortal_AdminController', 'addMenus' ) );
 

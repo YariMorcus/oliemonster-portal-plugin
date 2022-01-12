@@ -51,7 +51,7 @@ if ( isset( $_GET['controle_id'] ) ) {
                         <div class="form-group row mb-3">
                             <label for="status-aanvraag" class="col-sm-3 col-form-label">Status aanvraag</label>
                             <div class="col-sm-9 col-lg-9 col-xl-6">
-                                <select name="status-aanvraag" id="status-aanvraag" required disabled class="custom-select w-100">
+                                <select name="status-aanvraag" id="status-aanvraag" required disabled class="custom-select">
                                     <?php 
                                     define( 'SAMPLE_NOG_NIET_ONTVANGEN', 1 );
                                     define( 'IN_BEHANDELING', 2 );

@@ -16,11 +16,18 @@ $read-only: #EEEEEE;
 // @author Yari Morcus
 @mixin media($type, $feature) {
 
+    @if $feature == 'md' {
+        @media only #{$type} and (min-width: 768px) {
+            @content;
+        }
+    }
+
     @if $feature == 'lg' {
         @media only #{$type} and (min-width: 992px) {
             @content;
         }
     }
+
 }
 
 .h1,
@@ -34,8 +41,35 @@ td {
 }
 
 tr {
-    border-color: $dove-gray !important;
+    border-top: 1px solid $dove-gray !important;
+    
+    &:last-child {
+        border-bottom: 1px solid $dove-gray !important;
+    }
 }
+
+.badge.sample-niet-ontvangen,
+.badge.badge.afgehandeld {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $outer-space !important;
+    width: 200px;
+    height: 36px;
+}
+
+.badge.sample-niet-ontvangen {
+    background-color: #DC143C !important;
+}
+
+.badge.afgehandeld {
+    background: #2E8B57 !important;
+}
+
+// tr {
+//     border-top: 1px solid $dove-gray !important;
+//     border-color: $dove-gray !important;
+// }
 
 .wp-die-message, 
 p {
@@ -55,6 +89,7 @@ p {
 }
 
 .table td {
+    min-width: 170px;
     vertical-align: middle;
 }
 
@@ -117,14 +152,20 @@ textarea {
 }
 
 .form-submit-button {
+    width: 100%;
     height: 45px;
     border-radius: 4px;
     background-color: $caterpillar-yellow !important;
+
+    @include media('screen', 'md') {
+        float: right;
+        width: 220px;
+    }
 }
 
 .portal-button {
     background-color: $caterpillar-yellow !important;
-    border: 1px solid $outer-space;
+    border: 1px solid $outer-space !important;
     border-radius: 4px;
 }
 

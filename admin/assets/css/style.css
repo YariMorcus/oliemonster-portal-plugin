@@ -9,7 +9,28 @@ td {
 }
 
 tr {
-  border-color: #707070 !important;
+  border-top: 1px solid #707070 !important;
+}
+tr:last-child {
+  border-bottom: 1px solid #707070 !important;
+}
+
+.badge.sample-niet-ontvangen,
+.badge.badge.afgehandeld {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #293133 !important;
+  width: 200px;
+  height: 36px;
+}
+
+.badge.sample-niet-ontvangen {
+  background-color: #DC143C !important;
+}
+
+.badge.afgehandeld {
+  background: #2E8B57 !important;
 }
 
 .wp-die-message,
@@ -30,6 +51,7 @@ p {
 }
 
 .table td {
+  min-width: 170px;
   vertical-align: middle;
 }
 
@@ -102,7 +124,7 @@ input[type=url]:read-only,
 input[type=week]:read-only,
 .wp-core-ui select:read-only,
 textarea:read-only {
-  font-size: 15px;
+  font-size: 16px;
   color: #293133;
 }
 
@@ -118,14 +140,21 @@ textarea:read-only {
 }
 
 .form-submit-button {
+  width: 100%;
   height: 45px;
   border-radius: 4px;
   background-color: #F0B823 !important;
 }
+@media only screen and (min-width: 768px) {
+  .form-submit-button {
+    float: right;
+    width: 220px;
+  }
+}
 
 .portal-button {
   background-color: #F0B823 !important;
-  border: 1px solid #293133;
+  border: 1px solid #293133 !important;
   border-radius: 4px;
 }
 

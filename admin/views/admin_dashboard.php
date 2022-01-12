@@ -73,9 +73,9 @@ $base_url = get_admin_url() . 'admin.php';
                                     </tbody>
                                 </table> <!-- .table -->
                             </div> <!-- .table-responsive -->
-                        </section>
-                    </div>
-                </div>
+                        </section> <!-- col -->
+                    </div> <!-- .row -->
+                </div> <!-- container -->
             </div> <!-- .col-md-10 -->
         </div> <!-- .row -->
     </div> <!-- .container -->

@@ -134,14 +134,27 @@ input[type=week],
 textarea {
     border: 1px solid $outer-space !important;
 
-    &:invalid {
-        border: 1px solid $error-color !important;
-    }
-
     &:read-only {
         font-size: 16px;
         color: $outer-space;
     }
+}
+
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+.wp-core-ui select {
+    height: 45px;
 }
 
 #status-aanvraag,
@@ -160,6 +173,7 @@ textarea {
     height: 45px;
     border-radius: 4px;
     background-color: $caterpillar-yellow !important;
+    color: $outer-space !important;
 
     @include media('screen', 'md') {
         float: right;

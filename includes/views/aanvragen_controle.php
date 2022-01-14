@@ -243,7 +243,12 @@ if ( !empty( $post_array ) ) {
                             <textarea name="opmerking" class="form-control w-100" id="opmerkingen" rows="10" placeholder="U kunt hier eventuele opmerkingen kwijt"></textarea>
                         </div>
                     </div> <!-- .form-group -->
-                    <button name="submit" type="submit" class="btn mb-3 w-100 form-submit-button">Indienen aanvraag controle</button>
+                    <div class="form-group row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-xl-6">
+                            <button name="submit" type="submit" class="btn mb-3 form-submit-button">Indienen aanvraag controle</button>
+                        </div>
+                    </div>
                 </form>
                 <?php 
                 } else { // If form has been submitted, inform user

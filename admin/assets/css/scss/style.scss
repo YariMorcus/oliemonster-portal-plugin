@@ -102,19 +102,26 @@ p {
     box-shadow: 0 0 0 0.1rem #000 !important;
 }
 .col-form-label {
+    font-family: Arial, Helvetica, sans-serif;
     color: $outer-space !important;
 }
 
 .text-muted {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 13px !important;
+    
+    &#monsternummer-help {
+        color: $outer-space !important;
+        
+    }
 }
 
 input.readonly, 
 input[readonly],
 textarea.readonly, 
 textarea[readonly]
-select[readonly] {
-    background-color: $read-only;
+select[disabled] {
+    background: $read-only !important;
 }
 
 input[type=date],
@@ -132,6 +139,7 @@ input[type=url],
 input[type=week],
 .wp-core-ui select,
 textarea {
+    font-family: Arial, Helvetica, sans-serif;
     border: 1px solid $outer-space !important;
 
     &:read-only {
@@ -153,14 +161,24 @@ input[type=text],
 input[type=time],
 input[type=url],
 input[type=week],
+#olie-ververst,
+#filters-ververst,
+#koelmiddel-gebruikt,
 .wp-core-ui select {
-    height: 45px;
+    height: 45px !important;
 }
 
 #status-aanvraag,
 #olie-ververst,
 #filters-ververst,
 #koelmiddel-gebruikt {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("../img/select-arrow.svg");
+    background-repeat: no-repeat;
+    background-position-x: 96%;
+    background-position-y: 16px;
     min-width: 100%;
 }
 
@@ -178,6 +196,11 @@ input[type=week],
     @include media('screen', 'md') {
         float: right;
         width: 220px;
+    }
+
+    @include media('screen', 'lg') {
+        width: 185px;
+        height: fit-content;
     }
 }
 

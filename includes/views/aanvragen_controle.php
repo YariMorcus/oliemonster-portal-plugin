@@ -49,9 +49,15 @@ if ( !empty( $post_array ) ) {
             
             // Save was succesful
             $add = TRUE;
-            
+
+            // Load the model
+            require_once OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/Melding.php';
+
+            // Instantiate the class
+            $melding = new Melding();
+
             // Send automatic e-mail to owner of site of newly submitted request for a check
-            $aanvragen_controle->sendAutomaticEmail( $post_array );
+            $melding->verstuurNotificatie( $post_array );
  
         } else {
 

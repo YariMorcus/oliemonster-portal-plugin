@@ -1,7 +1,6 @@
 <?php 
 /**
- * Class contains the function that sends an automatic e-mail to the site admin
- * when new request has been submitted
+ * Class contains the getter and setter to later on retrieve the user id when requested
  * 
  * @package Gebruiker
  * @author Yari Morcus <ymorcus@student.scalda.nl>

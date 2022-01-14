@@ -3,8 +3,20 @@
 // Include the model
 require_once OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/AanvragenControle.php';
 
+// Include the model
+require_once OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/Gebruiker.php';
+
 // Declare class variable
 $aanvragen_controle = new AanvragenControle();
+
+// Declare class variable
+$gebruiker = new Gebruiker();
+
+// Set the gebruiker ID
+$gebruiker->setGebruikerID( get_current_user_id() );
+
+// Get gebruiker ID
+$gebruiker_id = $gebruiker->getGebruikerID();
 
 // Set base url to current file and add page specific vars
 $base_url = get_admin_url() . 'admin.php';
@@ -88,7 +100,7 @@ if ( !empty( $post_array ) ) {
                 if ( ! $add ) { // If form hasn't been submitted by the user, show the form so user can request a new check
                 ?>
                 <form action="<?php echo $base_url; ?>" method="POST" class="needs-validation" novalidate>
-                    <input name="gebruiker-id" type="hidden" required readonly class="form-control-plain-text w-100" id="gebruiker-id" value="<?php echo get_current_user_id(); ?>">
+                    <input name="gebruiker-id" type="hidden" required readonly class="form-control-plain-text w-100" id="gebruiker-id" value="<?php echo $gebruiker_id; ?>">
                     <div class="form-group row mb-3">
                         <label for="monsternummer" class="col-sm-3 col-form-label">Monsternummer</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">

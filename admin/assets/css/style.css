@@ -59,6 +59,19 @@ p {
   vertical-align: middle;
 }
 
+.portal-button:hover,
+.form-submit-button:hover {
+  transition: 0.35s all ease-out;
+  background-color: #FFD54D !important;
+  color: #000;
+}
+.portal-button:active,
+.form-submit-button:active {
+  transition: 0.35s all ease-out;
+  background-color: #C29213 !important;
+  color: #000;
+}
+
 .btn-check:focus + .btn, .btn:focus {
   outline: 0;
   box-shadow: 0 0 0 0.1rem #000 !important;

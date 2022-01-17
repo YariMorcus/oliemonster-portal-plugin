@@ -97,10 +97,28 @@ p {
     vertical-align: middle;
 }
 
+.portal-button,
+.form-submit-button {
+    
+    &:hover {
+        transition: .35s all ease-out;
+        background-color: #FFD54D !important;
+        color: #000;
+    }
+
+    &:active {
+        transition: .35s all ease-out;
+        background-color: #C29213 !important;
+        color: #000;
+    }
+    
+}
+
 .btn-check:focus+.btn, .btn:focus {
     outline: 0;
     box-shadow: 0 0 0 0.1rem #000 !important;
 }
+
 .col-form-label {
     font-family: Arial, Helvetica, sans-serif;
     color: $outer-space !important;

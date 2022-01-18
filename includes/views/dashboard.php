@@ -32,7 +32,7 @@ $aanvragen_controle_link = add_query_arg( $params, $base_url );
                 <section>
                     <h2 class="h2 mb-4">Overzicht ingediende aanvragen</h2>
                     <div class="table-responsive">
-                        <table class="table table-borderless">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th scope="col">Monsternummer</th>

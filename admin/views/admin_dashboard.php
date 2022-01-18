@@ -64,12 +64,6 @@ $base_url = get_admin_url() . 'admin.php';
                                             
                                             }
                                         ?>
-                                        <!-- <tr>
-                                            <td>2930572</td>
-                                            <td>John Doe</td>
-                                            <td>Brandpunt</td>
-                                            <td><button class="portal-button portal-button-small">Bekijk aanvraag</button></td>
-                                        </tr> -->
                                     </tbody>
                                 </table> <!-- .table -->
                             </div> <!-- .table-responsive -->

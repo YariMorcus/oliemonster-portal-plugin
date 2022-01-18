@@ -16,6 +16,12 @@ $read-only: #EEEEEE;
 // @author Yari Morcus
 @mixin media($type, $feature) {
 
+    @if $feature == 'sm' {
+        @media only #{$type} and (min-width: 576px) {
+            @content;
+        }
+    }
+
     @if $feature == 'md' {
         @media only #{$type} and (min-width: 768px) {
             @content;
@@ -122,6 +128,10 @@ p {
 .col-form-label {
     font-family: Arial, Helvetica, sans-serif;
     color: $outer-space !important;
+    
+    @include media('screen', 'sm') {
+        text-align: right;
+    }
 }
 
 .text-muted {

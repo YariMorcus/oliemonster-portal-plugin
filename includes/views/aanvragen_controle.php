@@ -264,7 +264,7 @@ if ( !empty( $post_array ) ) {
                     <div class="form-group row">
                         <div class="col-sm-3"></div>
                         <div class="col-xl-6">
-                            <button name="submit" type="submit" class="btn mb-3 form-submit-button">Indienen aanvraag controle</button>
+                            <button name="submit" type="submit" class="btn mb-3 portal-button form-submit-button">Indienen aanvraag controle</button>
                         </div>
                     </div>
                 </form>

@@ -85,6 +85,10 @@ p {
     padding: 1rem .5rem !important;
 }
 
+.table>:not(:first-child) {
+    border-top: 1px solid $dove-gray !important;
+}
+
 .table td {
     min-width: 170px;
     vertical-align: middle;

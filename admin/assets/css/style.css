@@ -8,13 +8,6 @@ td {
   color: #293133;
 }
 
-tr {
-  border-top: 1px solid #707070 !important;
-}
-tr:last-child {
-  border-bottom: 1px solid #707070 !important;
-}
-
 .remove-padding {
   padding: 0 !important;
 }

@@ -46,14 +46,6 @@ td {
   color: $outer-space;  
 }
 
-tr {
-    border-top: 1px solid $dove-gray !important;
-    
-    &:last-child {
-        border-bottom: 1px solid $dove-gray !important;
-    }
-}
-
 .remove-padding {
     padding: 0 !important;
 }
@@ -75,11 +67,6 @@ tr {
 .badge.afgehandeld {
     background: #2E8B57 !important;
 }
-
-// tr {
-//     border-top: 1px solid $dove-gray !important;
-//     border-color: $dove-gray !important;
-// }
 
 .wp-die-message, 
 p {

@@ -21,8 +21,8 @@ $aanvragen_controle_link = add_query_arg( $params, $base_url );
             <div class="col-md-10 col-lg-9">
                 <h1 class="h1 mb-4">Dashboard</h1>
                 <p class="mb-4">
-                    Dit is het dashboard van het 'Oliemonster portal'. Deze pagina toont niet alleen het overzicht van
-                    uw ingediende aanvragen, voor het controleren van de oliemonsters, maar ook een button waarmee u een
+                    Dit is het dashboard van het 'Oliemonster portal'.<br> Deze pagina toont niet alleen het overzicht van
+                    uw ingediende aanvragen, voor het controleren van de oliemonsters,<br> maar ook een button waarmee u een
                     controle kunt aanvragen.
                 </p> <!-- .mb-4 -->
                 <section class="mb-4">

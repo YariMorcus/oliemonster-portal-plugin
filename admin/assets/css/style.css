@@ -95,13 +95,6 @@ p {
   color: #293133 !important;
 }
 
-input.readonly,
-input[readonly],
-textarea.readonly,
-textarea[readonly] select[disabled] {
-  background: #EEEEEE !important;
-}
-
 input[type=date],
 input[type=datetime-local],
 input[type=datetime],
@@ -171,6 +164,14 @@ input[type=week],
   background-position-x: 96%;
   background-position-y: 16px;
   min-width: 100%;
+}
+
+input.readonly,
+input[readonly],
+textarea.readonly,
+textarea[readonly],
+select[disabled] {
+  background: #EEEEEE !important;
 }
 
 .form-submit-button {

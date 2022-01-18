@@ -144,14 +144,6 @@ p {
     }
 }
 
-input.readonly, 
-input[readonly],
-textarea.readonly, 
-textarea[readonly]
-select[disabled] {
-    background: $read-only !important;
-}
-
 input[type=date],
 input[type=datetime-local],
 input[type=datetime],
@@ -169,7 +161,7 @@ input[type=week],
 textarea {
     font-family: Arial, Helvetica, sans-serif;
     border: 1px solid $outer-space !important;
-
+    
     &:read-only {
         font-size: 16px;
         color: $outer-space;
@@ -208,6 +200,14 @@ input[type=week],
     background-position-x: 96%;
     background-position-y: 16px;
     min-width: 100%;
+}
+
+input.readonly, 
+input[readonly],
+textarea.readonly, 
+textarea[readonly],
+select[disabled] {
+    background: $read-only !important;
 }
 
 .form-submit-button {

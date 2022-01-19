@@ -163,11 +163,11 @@ if ( !empty( $post_array ) ) {
                         </div>
                     </div> <!-- .form-group -->
                     <div class="form-group row mb-3">
-                        <label for="monster-datum" class="col-sm-3 col-form-label">Monster datum</label>
+                        <label for="monster-datum" class="col-sm-3 col-form-label">Monsterdatum</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
-                            <input name="monster-datum" type="date" required class="form-control-plain-text w-100" id="monster-datum" placeholder="Vul hier de monster datum in">
+                            <input name="monster-datum" type="date" required class="form-control-plain-text w-100" id="monster-datum" placeholder="Vul hier de monsterdatum in">
                             <div class="invalid-feedback">
-                                Monster datum niet ingevuld!
+                                Monsterdatum niet ingevuld!
                             </div>
                         </div>
                     </div> <!-- .form-group -->
@@ -275,7 +275,7 @@ if ( !empty( $post_array ) ) {
                     $params = array( 'page' => 'oliemonster-portal-dashboard' );
                     $redirect_url = add_query_arg( $params, $base_url );
                     ?>
-                    <p class="aanvraag-ingediend">Aanvraag succesvol ingediend</p>
+                    <p class="aanvraag-ingediend">Aanvraag succesvol ingediend.</p>
                     <script>
                         // Redirect user back to dashboard after 3 seconds
                        setTimeout(() => {

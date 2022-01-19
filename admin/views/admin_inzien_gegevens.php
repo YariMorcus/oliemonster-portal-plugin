@@ -145,11 +145,11 @@ if ( isset( $_GET['controle_id'] ) ) {
                             </div>
                         </div> <!-- .form-group -->
                         <div class="form-group row mb-3">
-                            <label for="monster-datum" class="col-sm-3 col-form-label">Monster datum</label>
+                            <label for="monster-datum" class="col-sm-3 col-form-label">Monsterdatum</label>
                             <div class="col-sm-9 col-lg-9 col-xl-6">
-                                <input name="monster-datum" type="date" required readonly class="form-control-plain-text w-100" id="monster-datum" placeholder="Vul hier de monster datum in" value="<?php echo $information_request->monster_datum; ?>">
+                                <input name="monster-datum" type="date" required readonly class="form-control-plain-text w-100" id="monster-datum" placeholder="Vul hier de monsterdatum in" value="<?php echo $information_request->monster_datum; ?>">
                                 <div class="invalid-feedback">
-                                    Monster datum niet ingevuld!
+                                    Monsterdatum niet ingevuld!
                                 </div>
                             </div>
                         </div> <!-- .form-group -->

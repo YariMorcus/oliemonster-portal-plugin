@@ -84,6 +84,7 @@ class Melding {
 
             }
 
+            // Variable contains the entire table that has been setup in the above foreach
             $message = $table_open;
 
             // Define the headers
@@ -101,9 +102,13 @@ class Melding {
 
         } catch(Exception $exc) {
 
+            // Save the error for future usage
             $this->last_error = $wpdb->last_error;
+
+            // Show the error message to the user
             echo $exc->getMessage();
 
+            // Return false to indicate that something went wrong
             return FALSE;
         }
 

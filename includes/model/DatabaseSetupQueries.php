@@ -100,6 +100,7 @@ class DatabaseSetupQueries {
           ) $charset_collate;
           ";
           
+          // Return the above queries for later execution
           return $table_queries;
     
     }

@@ -19,6 +19,7 @@ class Gebruiker {
     */
     public function getGebruikerID() {
 
+        // Return the user id when function is called
         return $this->gebruiker_id;
 
     }
@@ -30,6 +31,7 @@ class Gebruiker {
     */
     public function setGebruikerID( $gebruiker_id ) {
 
+        // Convert user id to int and check if it is an int
         if ( is_int( intval( $gebruiker_id ) ) ) {
 
             $this->gebruiker_id = $gebruiker_id;

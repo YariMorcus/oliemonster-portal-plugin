@@ -42,13 +42,13 @@ class DatabaseSetup {
         $table_names = DatabaseSetupQueries::retrieveTables();
         
         // Insert data into the 'wp_oliepor_filters_ververst' table
-        DatabaseSetup::insertFiltersVerverstData($table_names);
+        //DatabaseSetup::insertFiltersVerverstData($table_names);
 
         // Insert data into the 'wp_oliepor_filters_ververst' table
-        DatabaseSetup::insertKoelmiddelgebruiktData($table_names);
+        //DatabaseSetup::insertKoelmiddelgebruiktData($table_names);
 
         // Insert data into the 'wp_oliepor_olie_ververst' table
-        DatabaseSetup::insertOlieVerverstData($table_names);
+        //DatabaseSetup::insertOlieVerverstData($table_names);
 
         // Insert data into the 'wp_oliepor_status_aanvragen' table
         DatabaseSetup::insertStatusAanvragenData($table_names);
@@ -60,87 +60,87 @@ class DatabaseSetup {
      * 
      * Insert data concerning the 'wp_oliepor_filters_ververst' table
     */
-    private static function insertFiltersVerverstData($table_names) {
+    // private static function insertFiltersVerverstData($table_names) {
 
-        global $wpdb;
+    //     global $wpdb;
 
-        // Insert first row in table 'wp_oliepor_filters_ververst'
-        $wpdb->insert(
-            $table_names[1],
-            array(
-                'ID' => 1,
-                'antwoord' => 'Ja'
-            )
-        );
+    //     // Insert first row in table 'wp_oliepor_filters_ververst'
+    //     $wpdb->insert(
+    //         $table_names[1],
+    //         array(
+    //             'ID' => 1,
+    //             'antwoord' => 'Ja'
+    //         )
+    //     );
 
-        // Insert second row in table 'wp_oliepor_filters_ververst'
-        $wpdb->insert(
-            $table_names[1],
-            array(
-                'ID' => 2,
-                'antwoord' => 'Nee'
-            )
-        );
+    //     // Insert second row in table 'wp_oliepor_filters_ververst'
+    //     $wpdb->insert(
+    //         $table_names[1],
+    //         array(
+    //             'ID' => 2,
+    //             'antwoord' => 'Nee'
+    //         )
+    //     );
 
-    }
+    // }
 
     /**
      * insertKoelmiddelgebruiktData
      * 
      * Insert data concerning the 'wp_oliepor_koelmiddel_gebruikt' table
     */
-    private static function insertKoelmiddelgebruiktData($table_names) {
+    // private static function insertKoelmiddelgebruiktData($table_names) {
 
-        global $wpdb;
+    //     global $wpdb;
 
-        // Insert first row in table 'wp_oliepor_koelmiddel_gebruikt'
-        $wpdb->insert(
-            $table_names[2],
-            array(
-                'ID' => 1,
-                'antwoord' => 'Ja'
-            )
-        );
+    //     // Insert first row in table 'wp_oliepor_koelmiddel_gebruikt'
+    //     $wpdb->insert(
+    //         $table_names[2],
+    //         array(
+    //             'ID' => 1,
+    //             'antwoord' => 'Ja'
+    //         )
+    //     );
 
-        // Insert second row in table 'wp_oliepor_koelmiddel_gebruikt'
-        $wpdb->insert(
-            $table_names[2],
-            array(
-                'ID' => 2,
-                'antwoord' => 'Nee'
-            )
-        );
+    //     // Insert second row in table 'wp_oliepor_koelmiddel_gebruikt'
+    //     $wpdb->insert(
+    //         $table_names[2],
+    //         array(
+    //             'ID' => 2,
+    //             'antwoord' => 'Nee'
+    //         )
+    //     );
 
-    }
+    // }
 
     /**
      * insertOlieVerverstData
      * 
      * Insert data concerning the 'wp_oliepor_olie_ververst' table
     */
-    private static function insertOlieVerverstData($table_names) {
+    // private static function insertOlieVerverstData($table_names) {
 
-        global $wpdb;
+    //     global $wpdb;
 
-        // Insert first row in table 'wp_oliepor_olie_ververst'
-        $wpdb->insert(
-            $table_names[3],
-            array(
-                'ID' => 1,
-                'antwoord' => 'Ja'
-            )
-        );
+    //     // Insert first row in table 'wp_oliepor_olie_ververst'
+    //     $wpdb->insert(
+    //         $table_names[3],
+    //         array(
+    //             'ID' => 1,
+    //             'antwoord' => 'Ja'
+    //         )
+    //     );
 
-        // Insert second row in table 'wp_oliepor_olie_ververst'
-        $wpdb->insert(
-            $table_names[3],
-            array(
-                'ID' => 2,
-                'antwoord' => 'Nee'
-            )
-        );
+    //     // Insert second row in table 'wp_oliepor_olie_ververst'
+    //     $wpdb->insert(
+    //         $table_names[3],
+    //         array(
+    //             'ID' => 2,
+    //             'antwoord' => 'Nee'
+    //         )
+    //     );
 
-    }
+    // }
 
     /**
      * insertStatusAanvragenData
@@ -153,7 +153,7 @@ class DatabaseSetup {
 
         // Insert first row in table 'wp_oliepor_status_aanvragen'
         $wpdb->insert(
-            $table_names[4],
+            $table_names[1],
             array(
                 'ID' => 1,
                 'status' => 'Sample nog niet ontvangen'
@@ -162,7 +162,7 @@ class DatabaseSetup {
 
         // Insert second row in table 'wp_oliepor_status_aanvragen'
         $wpdb->insert(
-            $table_names[4],
+            $table_names[1],
             array(
                 'ID' => 2,
                 'status' => 'In behandeling'
@@ -171,7 +171,7 @@ class DatabaseSetup {
 
         // Insert third row in table 'wp_oliepor_status_aanvragen'
         $wpdb->insert(
-            $table_names[4],
+            $table_names[1],
             array(
                 'ID' => 3,
                 'status' => 'Afgehandeld'

@@ -147,7 +147,7 @@ if ( !empty( $post_array ) ) {
                     <div class="form-group row mb-3">
                         <label for="serienummer" class="col-sm-3 col-form-label">Serienummer</label>
                         <div class="col-sm-9 col-lg-9 col-xl-6">
-                            <input name="serienummer" type="text" required class="form-control-plain-text w-100" id="serienummer" placeholder="Vul hier het serienummer in">
+                            <input name="serienummer" type="text" pattern="^[a-z0-9]+$" required class="form-control-plain-text w-100" id="serienummer" placeholder="Vul hier het serienummer in">
                             <div class="invalid-feedback">
                                 Serienummer niet ingevuld!
                             </div>
@@ -213,7 +213,7 @@ if ( !empty( $post_array ) ) {
                             <select name="olie-ververst" id="olie-ververst" required class="custom-select w-100">
                                 <option value="">Selecteer ja of nee</option>
                                 <option value="1">Ja</option>
-                                <option value="2">Nee</option>
+                                <option value="0">Nee</option>
                             </select>
                             <div class="invalid-feedback">
                                 Selecteer ja of nee.
@@ -226,7 +226,7 @@ if ( !empty( $post_array ) ) {
                             <select name="filters-ververst" id="filters-ververst" required class="custom-select w-100">
                                 <option value="">Selecteer ja of nee</option>
                                 <option value="1">Ja</option>
-                                <option value="2">Nee</option>
+                                <option value="0">Nee</option>
                             </select>
                             <div class="invalid-feedback">
                                 Selecteer ja of nee.
@@ -239,7 +239,7 @@ if ( !empty( $post_array ) ) {
                             <select name="koelmiddel-gebruikt" id="koelmiddel-gebruikt" required class="custom-select w-100">
                                 <option value="">Selecteer ja of nee</option>
                                 <option value="1">Ja</option>
-                                <option value="2">Nee</option>
+                                <option value="0">Nee</option>
                             </select>
                             <div class="invalid-feedback">
                                 Selecteer ja of nee.

@@ -155,7 +155,7 @@ class AanvragenControle {
         global $wpdb;
 
             // Setup insert query
-            $query = "INSERT INTO " . $wpdb->prefix . "oliepor_controle_aanvragen (gebruiker_ID, monsternummer, naam_klant, naam_schip, motor, type_motor, serienummer, soort_onderzoek, monster_datum, urenstand_motor, merk_olie, type_olie, urengebruik_olie, fk_olie_ververst_id, fk_filters_ververst_id, fk_koelmiddel_gebruikt_id, merk_koelmiddel, opmerking) VALUES( %d, %d, %s, %s, %s, %s, %s, %s, %s, %d, %s, %s, %d, %d, %d, %d, %s, %s );";
+            $query = "INSERT INTO " . $wpdb->prefix . "oliepor_controle_aanvragen (gebruiker_ID, monsternummer, naam_klant, naam_schip, motor, type_motor, serienummer, soort_onderzoek, monster_datum, urenstand_motor, merk_olie, type_olie, urengebruik_olie, olie_ververst, filters_ververst, koelmiddel_gebruikt, merk_koelmiddel, opmerking) VALUES( %d, %d, %s, %s, %s, %s, %s, %s, %s, %d, %s, %s, %d, %d, %d, %d, %s, %s );";
 
             // Execute query
             $wpdb->query( 
@@ -241,9 +241,9 @@ class AanvragenControle {
             $aanvraag->setMerkOlie( $array[ 'merk_olie' ] );
             $aanvraag->setTypeOlie( $array[ 'type_olie' ] );
             $aanvraag->setUrengebruikOlie( $array[ 'urengebruik_olie' ] );
-            $aanvraag->setOlieVerverst( $array[ 'fk_olie_ververst_id' ] );
-            $aanvraag->setFiltersVerverst( $array[ 'fk_filters_ververst_id' ] );
-            $aanvraag->setKoelmiddelGebruikt( $array[ 'fk_koelmiddel_gebruikt_id' ] );
+            $aanvraag->setOlieVerverst( $array[ 'olie_ververst' ] );
+            $aanvraag->setFiltersVerverst( $array[ 'filters_ververst' ] );
+            $aanvraag->setKoelmiddelGebruikt( $array[ 'koelmiddel_gebruikt' ] );
             $aanvraag->setMerkKoelmiddel( $array[ 'merk_koelmiddel' ] );
             $aanvraag->setOpmerking( $array[ 'opmerking' ] );
 

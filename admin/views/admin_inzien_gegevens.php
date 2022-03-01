@@ -76,7 +76,7 @@ if ( isset( $_GET['controle_id'] ) ) {
                                     }
 
                                     // If status is 'Afgehandeld', show this option element first
-                                    if ( intval( $information_request->fk_status_aanvraag_id ) === AFGEHANDELD ) {
+                                    if ( intval( $information_request->status_aanvraag_id ) === AFGEHANDELD ) {
                                         ?>
                                         <option value="1">Sample nog niet ontvangen</option>
                                         <option value="2">In behandeling</option>
@@ -195,10 +195,10 @@ if ( isset( $_GET['controle_id'] ) ) {
                                 <select name="olie-ververst" id="olie-ververst" required disabled class="custom-select w-100">
                                     <?php 
                                     define('JA', 1);
-                                    define('NEE', 2);
+                                    define('NEE', 0);
 
                                     // If user has selected 'Ja' when filling in the form, make the default value 'Ja'
-                                    if ( intval( $information_request->fk_olie_ververst_id ) === JA ) {
+                                    if ( intval( $information_request->olie_ververst ) === JA ) {
                                         ?>
                                         <option selected="selected" value="1">Ja</option>
                                         <option value="2">Nee</option>
@@ -206,7 +206,7 @@ if ( isset( $_GET['controle_id'] ) ) {
                                     }
                                     
                                     // If user has selected 'nee' when filling in the form, make the default value 'Nee'
-                                    if ( intval( $information_request->fk_olie_ververst_id ) === NEE ) {
+                                    if ( intval( $information_request->olie_ververst ) === NEE ) {
                                         ?>
                                         <option value="1">Ja</option>
                                         <option selected="selected" value="2">Nee</option>
@@ -225,7 +225,7 @@ if ( isset( $_GET['controle_id'] ) ) {
                                 <select name="filters-ververst" id="filters-ververst" required disabled class="custom-select w-100">
                                     <?php 
                                     // If user has selected 'Ja' when filling in the form, make the default value 'Ja'
-                                    if ( intval( $information_request->fk_filters_ververst_id ) === JA ) {
+                                    if ( intval( $information_request->filters_ververst ) === JA ) {
                                         ?>
                                         <option selected="selected" value="1">Ja</option>
                                         <option value="2">Nee</option>
@@ -233,7 +233,7 @@ if ( isset( $_GET['controle_id'] ) ) {
                                     }
                                     
                                     // If user has selected 'nee' when filling in the form, make the default value 'Nee'
-                                    if ( intval( $information_request->fk_filters_ververst_id ) === NEE ) {
+                                    if ( intval( $information_request->filters_ververst ) === NEE ) {
                                         ?>
                                         <option value="1">Ja</option>
                                         <option selected="selected" value="2">Nee</option>
@@ -252,7 +252,7 @@ if ( isset( $_GET['controle_id'] ) ) {
                                 <select name="koelmiddel-gebruikt" id="koelmiddel-gebruikt" required disabled class="custom-select w-100">
                                     <?php 
                                     // If user has selected 'Ja' when filling in the form, make the default value 'Ja'
-                                    if ( intval( $information_request->fk_koelmiddel_gebruikt_id ) === JA ) {
+                                    if ( intval( $information_request->koelmiddel_gebruikt ) === JA ) {
                                         ?>
                                         <option selected="selected" value="1">Ja</option>
                                         <option value="2">Nee</option>
@@ -260,7 +260,7 @@ if ( isset( $_GET['controle_id'] ) ) {
                                     }
                                     
                                     // If user has selected 'nee' when filling in the form, make the default value 'Nee'
-                                    if ( intval( $information_request->fk_koelmiddel_gebruikt_id ) === NEE ) {
+                                    if ( intval( $information_request->koelmiddel_gebruikt ) === NEE ) {
                                         ?>
                                         <option value="1">Ja</option>
                                         <option selected="selected" value="2">Nee</option>

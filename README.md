@@ -1,5 +1,7 @@
 # Project name: Het Oliemonster (Dutch)
 
+<img class="logo-img-markdown" src="wordpress-theme/assets/images/logo.jpg" alt="logo of project het oliemonster" width="300">
+
 ## :books: Description
 Project 'Het Oliemonster' is a Dutch project in which I had the task to develop a customer portal.
 

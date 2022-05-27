@@ -1,0 +1,325 @@
+.h1,
+.h2,
+p,
+button,
+th,
+td {
+  font-family: Arial, Helvetica, sans-serif !important;
+  color: #293133;
+}
+
+img[alt="logo of project het oliemonster"] {
+  float: right;
+  margin-left: 2rem;
+  border: 5px solid #F0B823;
+}
+
+.remove-padding {
+  padding: 0 !important;
+}
+
+.badge.sample-niet-ontvangen,
+.badge.badge.afgehandeld {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #293133 !important;
+  width: 200px;
+  height: 36px;
+}
+
+.badge.sample-niet-ontvangen {
+  background-color: #DC143C !important;
+}
+
+.badge.afgehandeld {
+  background-color: #2E8B57 !important;
+}
+
+.bewerken-container {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  float: right;
+  width: 130px !important;
+}
+.bewerken-container > a {
+  width: 100%;
+}
+.bewerken-container > a:focus {
+  color: #000 !important;
+}
+
+.opmerkingen-group > .bewerken-container {
+  height: 45px;
+}
+
+.wp-die-message,
+p {
+  font-size: 16px !important;
+}
+
+.h1 {
+  font-size: 32px !important;
+}
+
+.h2 {
+  font-size: 24px !important;
+}
+
+.table > :not(caption) > * > * {
+  padding: 1rem 0.5rem !important;
+}
+
+.table > :not(:first-child) {
+  border-top: 1px solid #707070 !important;
+}
+
+.table td {
+  min-width: 170px;
+  vertical-align: middle;
+}
+
+.invalid-feedback ul {
+  margin-bottom: 0;
+}
+.invalid-feedback ul > li {
+  list-style-type: initial;
+}
+
+.portal-button:hover,
+.form-submit-button:hover {
+  transition: 0.35s all ease-out;
+  background-color: #FFD54D !important;
+  color: #000;
+}
+.portal-button:active,
+.form-submit-button:active {
+  transition: 0.35s all ease-out;
+  background-color: #C29213 !important;
+  color: #000;
+}
+
+.btn-check:focus + .btn, .btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem #000 !important;
+}
+
+.col-form-label {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #293133 !important;
+}
+@media only screen and (min-width: 576px) {
+  .col-form-label {
+    text-align: right;
+  }
+}
+
+.text-muted {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px !important;
+}
+.text-muted#monsternummer-help {
+  color: #293133 !important;
+}
+
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+.wp-core-ui select,
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #293133 !important;
+}
+input[type=date]:read-only,
+input[type=datetime-local]:read-only,
+input[type=datetime]:read-only,
+input[type=email]:read-only,
+input[type=month]:read-only,
+input[type=number]:read-only,
+input[type=password]:read-only,
+input[type=search]:read-only,
+input[type=tel]:read-only,
+input[type=text]:read-only,
+input[type=time]:read-only,
+input[type=url]:read-only,
+input[type=week]:read-only,
+.wp-core-ui select:read-only,
+textarea:read-only {
+  font-size: 16px;
+  color: #293133;
+}
+
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+#olie-ververst,
+#filters-ververst,
+#koelmiddel-gebruikt,
+.wp-core-ui select {
+  height: 45px !important;
+}
+
+input[type=checkbox]:focus,
+input[type=color]:focus,
+input[type=date]:focus,
+input[type=datetime-local]:focus,
+input[type=datetime]:focus,
+input[type=email]:focus,
+input[type=month]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=radio]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus,
+select:focus,
+textarea:focus,
+.portal-button:focus,
+.portal-button-small:focus {
+  box-shadow: 0 0 0 1px #000000 !important;
+}
+
+#status-aanvraag,
+#olie-ververst,
+#filters-ververst,
+#koelmiddel-gebruikt {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("../img/select-arrow.svg");
+  background-repeat: no-repeat;
+  background-position-x: 96%;
+  background-position-y: 16px;
+  min-width: 100%;
+}
+
+input.readonly,
+input[readonly],
+textarea.readonly,
+textarea[readonly],
+select[disabled] {
+  background: #EEEEEE !important;
+}
+
+.form-submit-button {
+  width: 100%;
+  height: 45px;
+  border-radius: 4px;
+  background-color: #F0B823 !important;
+  color: #293133 !important;
+}
+@media only screen and (min-width: 768px) {
+  .form-submit-button {
+    float: right;
+    width: 220px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .form-submit-button {
+    width: 185px;
+    height: fit-content;
+  }
+}
+
+.portal-button {
+  background-color: #F0B823 !important;
+  border: 1px solid #293133 !important;
+  border-radius: 4px;
+}
+
+.portal-button-small {
+  width: 183px;
+  height: 40px;
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  color: black;
+  text-decoration: none;
+}
+
+.portal-button-large {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 125px;
+}
+@media only screen and (min-width: 992px) {
+  .portal-button-large {
+    width: 300px !important;
+  }
+}
+
+.opslaan-button {
+  color: #fff;
+  line-height: initial !important;
+  border: 1px solid #293133 !important;
+  width: 100%;
+  background-color: #2E8B57 !important;
+}
+.opslaan-button:hover {
+  color: #fff;
+  background-color: hsl(146deg, 50%, 43%) !important;
+}
+.modal-footer .opslaan-button {
+  width: initial;
+}
+
+.annuleer-button {
+  background-color: #DC143C !important;
+  line-height: initial !important;
+  border: 1px solid #293133 !important;
+}
+
+.close {
+  background-color: initial !important;
+  border: 2px solid #293133 !important;
+  border-radius: 4px !important;
+}
+
+.veld-leeg {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.3rem;
+  background: #DC143C;
+  color: white;
+}
+
+.aanvraag-ingediend {
+  padding: 1rem;
+  text-align: center;
+  color: #293133;
+  background-color: #F0B823;
+}
+@media only screen and (min-width: 992px) {
+  .aanvraag-ingediend {
+    max-width: 373px;
+    text-align: left;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

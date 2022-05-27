@@ -1,6 +1,0 @@
-/* Image represents logo in README.MD file on GitHub */
-img[alt="logo of project het oliemonster"] {
-    float: right;
-    margin-left: 2rem;
-    border: 5px solid $caterpillar-yellow;
-}

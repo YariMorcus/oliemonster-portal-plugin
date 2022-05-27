@@ -8,12 +8,6 @@ td {
   color: #293133;
 }
 
-img[alt="logo of project het oliemonster"] {
-  float: right;
-  margin-left: 2rem;
-  border: 5px solid #F0B823;
-}
-
 .remove-padding {
   padding: 0 !important;
 }

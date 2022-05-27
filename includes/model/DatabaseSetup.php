@@ -13,9 +13,11 @@ class DatabaseSetup {
      * createDBTables
      * 
      * Create the database tables for this plugin
+     * 
     */
     public static function createDBTables() {
 
+        // Load the DatabaseSetupQueries model
         require_once OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/DatabaseSetupQueries.php';
 
         // Retrieve the SQL query for table creations
@@ -32,6 +34,7 @@ class DatabaseSetup {
      * insertDBData
      * 
      * Insert the standard data for this plugin into the tables
+     * 
     */
     public static function insertDBData() {
 
@@ -40,15 +43,6 @@ class DatabaseSetup {
         
         // Retrieve the table names
         $table_names = DatabaseSetupQueries::retrieveTables();
-        
-        // Insert data into the 'wp_oliepor_filters_ververst' table
-        //DatabaseSetup::insertFiltersVerverstData($table_names);
-
-        // Insert data into the 'wp_oliepor_filters_ververst' table
-        //DatabaseSetup::insertKoelmiddelgebruiktData($table_names);
-
-        // Insert data into the 'wp_oliepor_olie_ververst' table
-        //DatabaseSetup::insertOlieVerverstData($table_names);
 
         // Insert data into the 'wp_oliepor_status_aanvragen' table
         DatabaseSetup::insertStatusAanvragenData($table_names);
@@ -56,124 +50,40 @@ class DatabaseSetup {
     }
 
     /**
-     * insertFiltersVerverstData
-     * 
-     * Insert data concerning the 'wp_oliepor_filters_ververst' table
-    */
-    // private static function insertFiltersVerverstData($table_names) {
-
-    //     global $wpdb;
-
-    //     // Insert first row in table 'wp_oliepor_filters_ververst'
-    //     $wpdb->insert(
-    //         $table_names[1],
-    //         array(
-    //             'ID' => 1,
-    //             'antwoord' => 'Ja'
-    //         )
-    //     );
-
-    //     // Insert second row in table 'wp_oliepor_filters_ververst'
-    //     $wpdb->insert(
-    //         $table_names[1],
-    //         array(
-    //             'ID' => 2,
-    //             'antwoord' => 'Nee'
-    //         )
-    //     );
-
-    // }
-
-    /**
-     * insertKoelmiddelgebruiktData
-     * 
-     * Insert data concerning the 'wp_oliepor_koelmiddel_gebruikt' table
-    */
-    // private static function insertKoelmiddelgebruiktData($table_names) {
-
-    //     global $wpdb;
-
-    //     // Insert first row in table 'wp_oliepor_koelmiddel_gebruikt'
-    //     $wpdb->insert(
-    //         $table_names[2],
-    //         array(
-    //             'ID' => 1,
-    //             'antwoord' => 'Ja'
-    //         )
-    //     );
-
-    //     // Insert second row in table 'wp_oliepor_koelmiddel_gebruikt'
-    //     $wpdb->insert(
-    //         $table_names[2],
-    //         array(
-    //             'ID' => 2,
-    //             'antwoord' => 'Nee'
-    //         )
-    //     );
-
-    // }
-
-    /**
-     * insertOlieVerverstData
-     * 
-     * Insert data concerning the 'wp_oliepor_olie_ververst' table
-    */
-    // private static function insertOlieVerverstData($table_names) {
-
-    //     global $wpdb;
-
-    //     // Insert first row in table 'wp_oliepor_olie_ververst'
-    //     $wpdb->insert(
-    //         $table_names[3],
-    //         array(
-    //             'ID' => 1,
-    //             'antwoord' => 'Ja'
-    //         )
-    //     );
-
-    //     // Insert second row in table 'wp_oliepor_olie_ververst'
-    //     $wpdb->insert(
-    //         $table_names[3],
-    //         array(
-    //             'ID' => 2,
-    //             'antwoord' => 'Nee'
-    //         )
-    //     );
-
-    // }
-
-    /**
      * insertStatusAanvragenData
      * 
-     * Insert data concerning the 'wp_oliepor_status_aanvragen' table
+     * Insert data concerning the 'wp_oliepor_status' table
+     * @param array, array holding the table names
+     * 
     */
-    private static function insertStatusAanvragenData($table_names) {
+    private static function insertStatusAanvragenData( $table_names ) {
 
+        // Define $wpdb as a global variable
         global $wpdb;
 
-        // Insert first row in table 'wp_oliepor_status_aanvragen'
+        // Insert first row in table 'wp_oliepor_status'
         $wpdb->insert(
             $table_names[1],
             array(
-                'ID' => 1,
+                'id' => 1,
                 'status' => 'Sample nog niet ontvangen'
             )
         );
 
-        // Insert second row in table 'wp_oliepor_status_aanvragen'
+        // Insert second row in table 'wp_oliepor_status'
         $wpdb->insert(
             $table_names[1],
             array(
-                'ID' => 2,
+                'id' => 2,
                 'status' => 'In behandeling'
             )
         );
 
-        // Insert third row in table 'wp_oliepor_status_aanvragen'
+        // Insert third row in table 'wp_oliepor_status'
         $wpdb->insert(
             $table_names[1],
             array(
-                'ID' => 3,
+                'id' => 3,
                 'status' => 'Afgehandeld'
             )
         );

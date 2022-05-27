@@ -16,6 +16,7 @@ class Gebruiker {
      * getGebruikerID
      * 
      * @return int, the user ID
+     * 
     */
     public function getGebruikerID() {
 
@@ -28,6 +29,7 @@ class Gebruiker {
      * setGebruikerID
      * 
      * @param int, the user ID
+     * 
     */
     public function setGebruikerID( $gebruiker_id ) {
 

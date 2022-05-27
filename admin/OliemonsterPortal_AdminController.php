@@ -14,12 +14,12 @@ class OliemonsterPortal_AdminController {
      * prepare
      * 
      * This function will prepare all Admin functionality for the plugin
+     * 
     */
     static function prepare() {
 
             // Add the sidebar menu structure
             add_action( 'admin_menu', array( 'OliemonsterPortal_AdminController', 'addMenus' ) );
-
         
     }
 
@@ -27,6 +27,7 @@ class OliemonsterPortal_AdminController {
      * addMenus
      * 
      * Add the sidebar menu structure
+     * 
     */
     static function addMenus() {
 
@@ -106,40 +107,48 @@ class OliemonsterPortal_AdminController {
 
     /**
      * adminDashboardPage
+     * 
+     * Include the view for this menu page
+     * 
     */
     static function adminDashboardPage() {
 
-        // Include the view for this menu page
         include OLIEMONSTER_PORTAL_PLUGIN_ADMIN_VIEWS_DIR . '/admin_dashboard.php';
         
     }
 
     /**
      * subscriberDashboardPage
+     * 
+     * Include the view for this menu page
+     * 
     */
     static function subscriberDashboardPage() {
 
-        // Include the view for this menu page
         include OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_VIEWS_DIR . '/dashboard.php';
 
     }
 
     /**
      * subscriberRequestCheckPage
+     * 
+     * Include the view for this menu page
+     * 
     */
     static function subscriberRequestCheckPage() {
 
-        // Include the view for this menu page
         include OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_VIEWS_DIR . '/aanvragen_controle.php';
 
     }
 
     /**
      * viewDataRequestCheckPage
+     * 
+     * Include the view for this menu page
+     * 
     */
     static function viewDataRequestCheckPage() {
 
-        // Include the view for this menu page
         include OLIEMONSTER_PORTAL_PLUGIN_ADMIN_VIEWS_DIR . '/admin_inzien_gegevens.php';
 
     }

@@ -15,23 +15,14 @@ class DatabaseSetupQueries {
      * 
      * Retrieve all table names for creation
      * @return array - Array containing the table names
+     * 
     */
     public static function retrieveTables() {
 
-        // return array(
-
-        //     $table_name_1 = 'wp_oliepor_controle_aanvragen', 
-        //     $table_name_2 = 'wp_oliepor_filters_ververst',
-        //     $table_name_3 = 'wp_oliepor_koelmiddel_gebruikt',
-        //     $table_name_4 = 'wp_oliepor_olie_ververst',
-        //     $table_name_5 = 'wp_oliepor_status_aanvragen'
-
-        // );
-
         return array(
 
-            $table_name_1 = 'wp_oliepor_controle_aanvragen',
-            $table_name_2 = 'wp_oliepor_status_aanvragen'
+            $table_name_1 = 'wp_oliepor_aanvraag',
+            $table_name_2 = 'wp_oliepor_status'
 
         );
 
@@ -43,81 +34,39 @@ class DatabaseSetupQueries {
      * Setup the SQL query set, used for the creation of the tables
      * 
      * @return string - The string containing the entire SQL query set
+     * 
     */
     public static function setupTableQueries() {
     
+        // Define $wpdb as a global variable
         global $wpdb;
 
+        /**
+         * @var string
+         * Holds the database character collate
+        */
         $charset_collate = $wpdb->get_charset_collate();
 
-        // Retrieve the table names
+        /**
+         * @var array
+         * (Retrieves and) holds the table names
+        */
         $table_names = DatabaseSetupQueries::retrieveTables();
 
-        // Setup the SQL queries for table creations
-        // $table_queries = "CREATE TABLE $table_names[1] (
-        //     ID int(10) NOT NULL,
-        //     antwoord varchar(10) NOT NULL,
-        //     PRIMARY KEY  (ID)
-        //   ) $charset_collate;
-
-        //   CREATE TABLE $table_names[2] (
-        //     ID int(10) NOT NULL,
-        //     antwoord varchar(10) NOT NULL,
-        //     PRIMARY KEY  (ID)
-        //   ) $charset_collate;
-
-        //   CREATE TABLE $table_names[3] (
-        //     ID int(10) NOT NULL,
-        //     antwoord varchar(10) NOT NULL,
-        //     PRIMARY KEY  (ID)
-        //   ) $charset_collate;
-
-        //   CREATE TABLE $table_names[4] (
-        //     ID int(10) NOT NULL,
-        //     status varchar(255) NOT NULL,
-        //     PRIMARY KEY  (ID)
-        //   ) $charset_collate; 
-
-        //   CREATE TABLE $table_names[0] (
-        //     controle_ID int(10) NOT NULL AUTO_INCREMENT,
-        //     gebruiker_ID int(10) NOT NULL,
-        //     monsternummer int(10) NOT NULL,
-        //     fk_status_aanvraag_id int(10) NOT NULL DEFAULT 1,
-        //     naam_klant varchar(255) NOT NULL,
-        //     naam_schip varchar(56) NOT NULL,
-        //     motor varchar(255) NOT NULL,
-        //     type_motor varchar(255) NOT NULL,
-        //     serienummer varchar(255) NOT NULL,
-        //     soort_onderzoek varchar(255) NOT NULL,
-        //     monster_datum varchar(255) NOT NULL,
-        //     urenstand_motor int(10) NOT NULL,
-        //     merk_olie varchar(255) NOT NULL,
-        //     type_olie varchar(255) NOT NULL,
-        //     urengebruik_olie int(10) NOT NULL,
-        //     fk_olie_ververst_id int(10) NOT NULL,
-        //     fk_filters_ververst_id int(10) NOT NULL,
-        //     fk_koelmiddel_gebruikt_id int(10) NOT NULL,
-        //     merk_koelmiddel varchar(255) NOT NULL,
-        //     opmerking varchar(255) DEFAULT NULL,
-        //     PRIMARY KEY  (controle_ID),
-        //     FOREIGN KEY  (fk_status_aanvraag_id) REFERENCES $table_names[4] (ID),
-        //     FOREIGN KEY  (fk_olie_ververst_id) REFERENCES $table_names[3] (ID),
-        //     FOREIGN KEY  (fk_filters_ververst_id) REFERENCES $table_names[1] (ID),
-        //     FOREIGN KEY  (fk_koelmiddel_gebruikt_id) REFERENCES $table_names[2] (ID)
-        //   ) $charset_collate;
-        //   ";
-
+        /**
+         * @var string
+         * Holds the entire table query for setup
+        */
         $table_queries = "CREATE TABLE $table_names[1] (
-            ID int(10) NOT NULL,
+            id int(10) NOT NULL AUTO_INCREMENT,
             status varchar(255) NOT NULL,
-            PRIMARY KEY  (ID)
+            PRIMARY KEY  (id)
           ) $charset_collate; 
 
           CREATE TABLE $table_names[0] (
-            controle_ID int(10) NOT NULL AUTO_INCREMENT,
-            gebruiker_ID int(10) NOT NULL,
             monsternummer int(10) NOT NULL,
-            fk_status_aanvraag_id int(10) NOT NULL DEFAULT 1,
+            fk_wp_oliepor_status_id int(10) NOT NULL DEFAULT 1,
+            gebruiker_id int(10) NOT NULL,
             naam_klant varchar(255) NOT NULL,
             naam_schip varchar(56) NOT NULL,
             motor varchar(255) NOT NULL,
@@ -129,13 +78,13 @@ class DatabaseSetupQueries {
             merk_olie varchar(255) NOT NULL,
             type_olie varchar(255) NOT NULL,
             urengebruik_olie int(10) NOT NULL,
-            olie_ververst int(10) NOT NULL,
-            filters_ververst int(10) NOT NULL,
-            koelmiddel_gebruikt int(10) NOT NULL,
+            olie_ververst varchar(255) NOT NULL,
+            filters_ververst varchar(255) NOT NULL,
+            koelmiddel_gebruikt varchar(255) NOT NULL,
             merk_koelmiddel varchar(255) NOT NULL,
             opmerking varchar(255) DEFAULT NULL,
-            PRIMARY KEY  (controle_ID),
-            FOREIGN KEY  (fk_status_aanvraag_id) REFERENCES $table_names[1] (ID)
+            PRIMARY KEY  (monsternummer),
+            FOREIGN KEY  (fk_wp_oliepor_status_id) REFERENCES $table_names[1] (id)
           ) $charset_collate;
           ";
           

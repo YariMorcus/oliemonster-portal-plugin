@@ -3,10 +3,16 @@
 // Include the model
 require_once OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/AanvragenControle.php';
 
-// Declare class variable
+/**
+ * @var object
+ * Instantiate the class
+*/
 $aanvragen_controle = new AanvragenControle();
 
-// Set base url for this page
+/**
+ * @var string
+ * Holds the base url for this page
+*/
 $base_url = get_admin_url() . 'admin.php';
 
 ?>
@@ -45,13 +51,25 @@ $base_url = get_admin_url() . 'admin.php';
                                     </thead>
                                     <tbody>
                                         <?php 
-                                            // Get all requested checks
+                                            /**
+                                             * @var array
+                                             * Array contains objects holding all information of already requested checks 
+                                            */
                                             $check_list = $aanvragen_controle->getAllCheckRequests();
         
-                                            // Loop over every check request and fill in the table
+                                            // Loop over all objects in the array, to setup the table on the dashboard
                                             foreach( $check_list as $check) {
-                                                
-                                            $params = array( 'page' => 'bekijken_gegevens', 'controle_id' => $check->controle_ID );
+                                            
+                                            /**
+                                             * @var array
+                                             * Contains the parameters for the update url
+                                            */
+                                            $params = array( 'page' => 'bekijken_gegevens', 'monsternummer' => $check->monsternummer );
+
+                                            /**
+                                             * @var string
+                                             * Variable holds the update url
+                                            */
                                             $update_url = add_query_arg( $params, $base_url );
                                                 ?>
                                                 <tr>

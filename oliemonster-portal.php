@@ -24,13 +24,12 @@ define( 'OLIEMONSTER_PORTAL_PLUGIN', __FILE__ );
 require_once plugin_dir_path( __FILE__ ) . 'includes/defs.php';
 
 // Tell WordPress what to do when plugin has been activated
-register_activation_hook( __FILE__, array( 'OliemonsterPortal', 'on_activation' ) );
+register_activation_hook( __FILE__, array( 'OliemonsterPortal', 'onActivation' ) );
 
 /**
  * Class instantiates the entire plugin functionality
  * @author Yari Morcus
  * @version 0.1
- * 
  * 
 */
 class OliemonsterPortal {
@@ -53,9 +52,8 @@ class OliemonsterPortal {
     /**
      * init
      * 
-     * Load the plugin into WordPress
+     * if is_admin(), load components ONLY if admin
      * 
-     * @since 0.1
     */
     public function init() {
 
@@ -88,12 +86,13 @@ class OliemonsterPortal {
     }
 
     /**
-     * on_activation
+     * onActivation
      * 
      * if { ! current_user_can( 'activate_plugins' ) }, if user cannot activate plugin's, abort function 
      * (prevent user from activating plugin)
+     * 
     */
-    public static function on_activation() {
+    public static function onActivation() {
 
         if ( ! current_user_can( 'activate_plugins' ) ) return;
 
@@ -111,6 +110,7 @@ class OliemonsterPortal {
      * requireAdmin
      * 
      * Loads all admin related files into scope
+     * 
     */
     public function requireAdmin() {
 
@@ -123,6 +123,7 @@ class OliemonsterPortal {
      * createAdmin
      * 
      * Setup admin page
+     * 
     */
     public function createAdmin() {
 
@@ -131,9 +132,10 @@ class OliemonsterPortal {
     }
 
     /**
-     * loadBootstrapCSS
+     * loadBootstrapFiles
      * 
-     * Load the Bootstrap CSS
+     * Load the Bootstrap CSS and JavaScript files
+     * 
     */
     static function loadBootstrapFiles() {
 
@@ -146,7 +148,8 @@ class OliemonsterPortal {
     /**
      * loadCustomCSS
      *
-     *  Load the custom CSS that has been used for this plugin
+     * Load the custom CSS that has been used for this plugin
+     * 
     */
     public function loadCustomCSS() {
 
@@ -158,6 +161,7 @@ class OliemonsterPortal {
      * addCustomAdminCapability
      * 
      * Add a custom administrator capability
+     * 
     */
     public function addCustomAdminCapability() {
 
@@ -173,6 +177,7 @@ class OliemonsterPortal {
      * addCustomSubscriberCapability
      * 
      * Add a custom subscriber capability
+     * 
     */
     public function addCustomSubscriberCapability() {
 
@@ -187,7 +192,10 @@ class OliemonsterPortal {
 
 }
 
-// Instantiate the class
+/**
+ * @var object
+ * Instantiate the class
+*/
 $oliemonster_portal = new OliemonsterPortal();
 
 ?>

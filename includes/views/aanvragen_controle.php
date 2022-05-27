@@ -6,74 +6,120 @@ require_once OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/AanvragenControle.
 // Include the model
 require_once OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/Gebruiker.php';
 
-// Declare class variable
+/**
+ * @var object
+ * Instantiate the AanvragenControle class
+*/
 $aanvragen_controle = new AanvragenControle();
 
-// Declare class variable
+/**
+ * @var object
+ * Instantiate the Gebruiker class
+*/
 $gebruiker = new Gebruiker();
 
 // Set the gebruiker ID
 $gebruiker->setGebruikerID( get_current_user_id() );
 
-// Get gebruiker ID
+/**
+ * @var int
+ * (Retrieve and) holds the gebruiker id
+*/
 $gebruiker_id = $gebruiker->getGebruikerID();
 
-// Set base url to current file and add page specific vars
+/**
+ * @var string
+ * Holds the base url for this page
+*/
 $base_url = get_admin_url() . 'admin.php';
+
+/**
+ * @var array
+ * Holds the parameters for this page
+*/
 $params = array( 'page' => basename( __FILE__, '.php' ) );
 
-// Add params to base url
+/**
+ * @var string
+ * Holds the base url for this page
+*/
 $base_url = add_query_arg( $params, $base_url );
 
-// Get the POST data in filtered array
+/**
+ * @var array
+ * Holds the POST data (filtered)
+*/
 $post_array = $aanvragen_controle->getPostValues();
 
-// Generate a random sample number
+/**
+ * @var int
+ * (Generates and) holds a random sample number
+*/
 $sample_number = $aanvragen_controle->generateRandomSampleNumber();
 
-// Check whether the sample number already exists
+/**
+ * @var boolean
+ * Check whether the sample number already exists
+*/
 $sample_number_exists = $aanvragen_controle->doesSampleNumberExist( $sample_number );
+
+// Define max length constant for sample number
+define( "SAMPLE_NUMBER_MAX_LENGTH", 7 );
 
 // Check if sample number already exists
 // If yes, generate a new sample number, and check again if it exists
 // If it does not exists yet, implement it in the value attr. of the corresponding input element
-if ( $sample_number_exists OR strlen($sample_number) < 7 ) {
+if ( $sample_number_exists OR strlen($sample_number) < SAMPLE_NUMBER_MAX_LENGTH ) {
 
+    /**
+     * @var int
+     * (Generates and) holds a new random sample number
+    */
     $sample_number = $aanvragen_controle->generateRandomSampleNumber();
 
+    /**
+     * @var boolean
+     * Check again whether the sample number already exists
+    */
     $sample_number_exists = $aanvragen_controle->doesSampleNumberExist( $sample_number );    
 
 }
 
-// Check the add form
+/**
+ * @var boolean
+ * Set add to FALSE (standard)
+*/
 $add = FALSE;
 
 // Check the POST data  
 if ( !empty( $post_array ) ) {
 
-
     if ( isset( $post_array['submit'] ) ) {
     
-        // Save the user input into the database
+        /**
+         * @var boolean
+         * Indicates whether save was succesful or not
+         * Saving the user input into the database is done here
+        */
         $result = $aanvragen_controle->save( $post_array );
         
         if ( $result ) {
             
-            // Save was succesful
+            /**
+             * @var boolean
+             * Holds TRUE for a succesful save
+            */
             $add = TRUE;
 
-            // Load the model
-            require_once OLIEMONSTER_PORTAL_PLUGIN_INCLUDES_MODEL_DIR . '/Melding.php';
-
-            // Instantiate the class
-            $melding = new Melding();
-
             // Send automatic e-mail to owner of site of newly submitted request for a check
-            $melding->verstuurNotificatie( $post_array );
+            $aanvragen_controle->verstuurNotificatie( $post_array );
  
         } else {
 
-            // Indicate error
+            /**
+             * @var boolean
+             * Holds FALSE to indicate error
+            */
             $error = TRUE;
 
         }
@@ -271,9 +317,18 @@ if ( !empty( $post_array ) ) {
                 <?php 
                 } else { // If form has been submitted, inform user
 
-                    // Setup redirect url
+                    /**
+                     * @var array
+                     * Holds the parameters for the redirect url
+                    */
                     $params = array( 'page' => 'oliemonster-portal-dashboard' );
+
+                    /**
+                     * @var string
+                     * Holds the redirect url
+                    */
                     $redirect_url = add_query_arg( $params, $base_url );
+                    
                     ?>
                     <p class="aanvraag-ingediend">Aanvraag succesvol ingediend.</p>
                     <script>

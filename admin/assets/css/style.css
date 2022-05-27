@@ -27,7 +27,25 @@ td {
 }
 
 .badge.afgehandeld {
-  background: #2E8B57 !important;
+  background-color: #2E8B57 !important;
+}
+
+.bewerken-container {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  float: right;
+  width: 130px !important;
+}
+.bewerken-container > a {
+  width: 100%;
+}
+.bewerken-container > a:focus {
+  color: #000 !important;
+}
+
+.opmerkingen-group > .bewerken-container {
+  height: 45px;
 }
 
 .wp-die-message,
@@ -54,6 +72,13 @@ p {
 .table td {
   min-width: 170px;
   vertical-align: middle;
+}
+
+.invalid-feedback ul {
+  margin-bottom: 0;
+}
+.invalid-feedback ul > li {
+  list-style-type: initial;
 }
 
 .portal-button:hover,
@@ -149,6 +174,29 @@ input[type=week],
   height: 45px !important;
 }
 
+input[type=checkbox]:focus,
+input[type=color]:focus,
+input[type=date]:focus,
+input[type=datetime-local]:focus,
+input[type=datetime]:focus,
+input[type=email]:focus,
+input[type=month]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=radio]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus,
+select:focus,
+textarea:focus,
+.portal-button:focus,
+.portal-button-small:focus {
+  box-shadow: 0 0 0 1px #000000 !important;
+}
+
 #status-aanvraag,
 #olie-ververst,
 #filters-ververst,
@@ -218,6 +266,41 @@ select[disabled] {
   .portal-button-large {
     width: 300px !important;
   }
+}
+
+.opslaan-button {
+  color: #fff;
+  line-height: initial !important;
+  border: 1px solid #293133 !important;
+  width: 100%;
+  background-color: #2E8B57 !important;
+}
+.opslaan-button:hover {
+  color: #fff;
+  background-color: #37a466 !important;
+}
+.modal-footer .opslaan-button {
+  width: initial;
+}
+
+.annuleer-button {
+  background-color: #DC143C !important;
+  line-height: initial !important;
+  border: 1px solid #293133 !important;
+}
+
+.close {
+  background-color: initial !important;
+  border: 2px solid #293133 !important;
+  border-radius: 4px !important;
+}
+
+.veld-leeg {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.3rem;
+  background: #DC143C;
+  color: white;
 }
 
 .aanvraag-ingediend {

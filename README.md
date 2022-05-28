@@ -1,4 +1,5 @@
 # Project name: Het Oliemonster (Dutch)
+## WordPress theme and plugin
 
 <img align="right" src="wordpress-theme/assets/images/logo.jpg" alt="logo of project het oliemonster" width="300">
 
